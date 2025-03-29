@@ -3,6 +3,8 @@ class_name Tower
 
 signal died
 
+var active : bool = false
+
 @export var health : int
 
 func _ready() -> void:

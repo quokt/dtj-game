@@ -20,6 +20,8 @@ class Wave:
 
 func _draw() -> void:
 	for tower in %Towers.get_children():
+		if tower.active == false:
+			continue
 		var color : Color = color_speaker
 		if tower == %Table : color = color_table
 		for wave in waves_array:

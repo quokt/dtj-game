@@ -4,7 +4,6 @@ signal clicked(ref: Tower)
 
 var mouse_inside : bool = false
 
-var active : bool = false
 
 var elapsed : float = 0.0
 func _process(delta: float) -> void:

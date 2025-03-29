@@ -108,3 +108,5 @@ position = Vector2(0, -451)
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="clicked" from="Visible/Towers/Speaker" to="." method="_on_speaker_clicked"]
+[connection signal="clicked" from="Visible/Towers/Speaker2" to="." method="_on_speaker_clicked"]

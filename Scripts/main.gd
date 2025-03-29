@@ -27,3 +27,8 @@ func spawn_enemies_from_wave(wave : EnemyWave) -> void:
 		var new_enemy = enemy_scene.instantiate()
 		%Enemies.add_child(new_enemy)
 		new_enemy.position = Vector2(randf_range(-320,320), %Camera.position.x-80.0)
+
+
+func _on_speaker_clicked(ref: Tower) -> void:
+	for child in %Towers.get_children():
+		child.active = child == ref

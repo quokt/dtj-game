@@ -19,7 +19,7 @@ func _draw() -> void:
 func _physics_process(delta: float) -> void:
 	queue_redraw()
 	for wave in waves_array:
-		print(wave.lifetime)
+		#print(wave.lifetime)
 		wave.lifetime += get_physics_process_delta_time()
 		if wave.lifetime >= WAVE_LIFETIME:
 			wave.queue_free()
@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_beat() -> void:
-	print(self)
+	#print(self)
 	var new_wave := Wave.new()
 	waves_array.append(new_wave)
 	

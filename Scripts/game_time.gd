@@ -13,5 +13,4 @@ func _process(delta: float) -> void:
 		elapsed_beat = 0.0
 	
 func on_beat_timer_timeout() -> void:
-	print("Beat ;; ", elapsed_beat)
 	beat.emit()

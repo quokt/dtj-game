@@ -15,11 +15,11 @@ func _on_wave_timer_timeout() -> void:
 	if enemy_waves.is_empty():
 		%WaveTimer.stop()
 		return
-	var wave = enemy_waves.pop_front()
+	var wave : EnemyWave = enemy_waves.pop_front()
 	spawn_enemies_from_wave(wave)
 	enemy_wave.emit(wave)
-	%WaveTimer.wait_time = wave.cooldown_time
-
+	%WaveTimer.start(wave.cooldown_time)
+	print(%WaveTimer.wait_time)
 
 func spawn_enemies_from_wave(wave : EnemyWave) -> void:
 	for enemy in range(wave.enemy_amount):

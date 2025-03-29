@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7fb2krrvui8e"
+path="res://.godot/imported/boumboum.wav-b7fe77bf6ea821c895665a025887a0d2.sample"
+
+[deps]
+
+source_file="res://Audio/loops block/boumboum.wav"
+dest_files=["res://.godot/imported/boumboum.wav-b7fe77bf6ea821c895665a025887a0d2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

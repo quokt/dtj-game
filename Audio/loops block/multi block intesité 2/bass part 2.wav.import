@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cbw5gwwaoigmx"
+path="res://.godot/imported/bass part 2.wav-388ad40264a359d1af93ea3f2b8f0756.sample"
+
+[deps]
+
+source_file="res://Audio/loops block/multi block intesité 2/bass part 2.wav"
+dest_files=["res://.godot/imported/bass part 2.wav-388ad40264a359d1af93ea3f2b8f0756.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

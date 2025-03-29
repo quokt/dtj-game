@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2oe0ywdj1fj0"
+path="res://.godot/imported/lead part3.wav-0f0abb9b18189fb00ca907bcd8923d3e.sample"
+
+[deps]
+
+source_file="res://Audio/loops block/multi block intesité 3/lead part3.wav"
+dest_files=["res://.godot/imported/lead part3.wav-0f0abb9b18189fb00ca907bcd8923d3e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -3,6 +3,7 @@ class_name Tower
 
 signal died
 
+var alpha : float = 0.0
 var active : bool = false
 
 @export var health : int

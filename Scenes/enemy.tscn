@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxfx6bw53bvmn"]
+[gd_scene load_steps=12 format=3 uid="uid://cxfx6bw53bvmn"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_y4ntl"]
+[ext_resource type="Script" uid="uid://c06gtdaaiwqdd" path="res://Scripts/enemy.gd" id="1_y4ntl"]
 [ext_resource type="Texture2D" uid="uid://cn7ctc2sfsuwt" path="res://Assets/Blob1Animation.png" id="2_1bjh7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wdaui"]
@@ -54,7 +54,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1lmmp"]
-radius = 11.0
+radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
+radius = 8.48528
 
 [node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_y4ntl")
@@ -65,5 +68,10 @@ sprite_frames = SubResource("SpriteFrames_cp0cj")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+position = Vector2(-3, 0)
 shape = SubResource("CircleShape2D_1lmmp")
+one_way_collision_margin = 0.0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(8, 4)
+shape = SubResource("CircleShape2D_1f0kj")

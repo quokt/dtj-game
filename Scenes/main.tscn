@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=11 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
 [ext_resource type="Script" uid="uid://b28o2n08nhmk2" path="res://Scripts/waves.gd" id="2_2pvco"]
 [ext_resource type="Script" uid="uid://bptn37gb8ldn6" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cl36ulcq58gn2" path="res://Scenes/speaker.tscn" id="6_21xkr"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
@@ -46,10 +47,17 @@ script = ExtResource("2_2pvco")
 unique_name_in_owner = true
 
 [node name="Towers" type="Node2D" parent="Visible"]
+unique_name_in_owner = true
 
 [node name="Table" parent="Visible/Towers" instance=ExtResource("5_kry3j")]
 unique_name_in_owner = true
-position = Vector2(974, 1017)
+position = Vector2(985, 1013)
+
+[node name="Speaker" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
+position = Vector2(1671, 554)
+
+[node name="Speaker2" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
+position = Vector2(175, 718)
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="GameTime/WaveTimer" to="." method="_on_wave_timer_timeout"]

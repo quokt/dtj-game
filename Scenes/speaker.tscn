@@ -6,7 +6,7 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iwwde"]
 shader = ExtResource("3_u5co3")
-shader_parameter/chaos = 27.44
+shader_parameter/chaos = 7.773
 shader_parameter/radius = 0.826
 shader_parameter/attenuation = 2.0
 

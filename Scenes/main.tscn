@@ -31,16 +31,20 @@ cooldown_time = 0.0
 clip_count = 4
 clip_0/name = &"Loop1"
 clip_0/stream = ExtResource("4_uy6yx")
-clip_0/auto_advance = 0
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
 clip_1/name = &"Loop2"
 clip_1/stream = ExtResource("5_3goxj")
-clip_1/auto_advance = 0
+clip_1/auto_advance = 1
+clip_1/next_clip = 2
 clip_2/name = &"Loop3"
 clip_2/stream = ExtResource("6_mo28i")
-clip_2/auto_advance = 0
+clip_2/auto_advance = 1
+clip_2/next_clip = 3
 clip_3/name = &"Loop4"
 clip_3/stream = ExtResource("7_jmu3w")
-clip_3/auto_advance = 0
+clip_3/auto_advance = 1
+clip_3/next_clip = 0
 
 [node name="Main" type="Node"]
 script = ExtResource("1_itoj1")

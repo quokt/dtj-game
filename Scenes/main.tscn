@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://uklm5ku67n8e"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
-[ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
-[ext_resource type="Script" path="res://Scripts/waves.gd" id="2_2pvco"]
-[ext_resource type="Script" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
+[ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
+[ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
+[ext_resource type="Script" uid="uid://b28o2n08nhmk2" path="res://Scripts/waves.gd" id="2_2pvco"]
+[ext_resource type="Script" uid="uid://bptn37gb8ldn6" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")

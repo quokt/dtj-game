@@ -96,6 +96,9 @@ position = Vector2(-239, -529)
 [node name="Speaker2" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
 position = Vector2(227, -532)
 
+[node name="Dancefloor" type="Node2D" parent="Visible" groups=["dancefloor"]]
+position = Vector2(-1, -380)
+
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -451)

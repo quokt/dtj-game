@@ -5,6 +5,9 @@ signal died
 
 @export var health : int
 
+func _ready() -> void:
+	add_to_group("towers")
+
 func take_damage(amount : int) -> void:
 	health = max(0, health - amount)
 	if health <= 0:

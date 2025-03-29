@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ptixcxeaekgw"]
+[gd_scene load_steps=11 format=3 uid="uid://ptixcxeaekgw"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_kol6t"]
 [ext_resource type="Texture2D" uid="uid://8oyubs71a72p" path="res://Assets/Blob2.png" id="2_hcppu"]
@@ -53,6 +53,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmbu5"]
+height = 20.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_kol6t")
 walk_speed = 50.0
@@ -63,3 +66,7 @@ texture_filter = 1
 scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_8jyyf")
 autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 3)
+shape = SubResource("CapsuleShape2D_bmbu5")

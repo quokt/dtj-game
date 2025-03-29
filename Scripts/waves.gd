@@ -4,6 +4,8 @@ const WAVE_LIFETIME = 5.0
 
 var offset := 100.0
 
+@export var wave_speed : float = 300.0
+
 var waves_array := []
 
 class Wave:

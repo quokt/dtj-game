@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=18 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://hd2pdgmc2cq0" path="res://Assets/map.png" id="7_6bp64"]
 [ext_resource type="AudioStream" uid="uid://ctc72666gmxj" path="res://Audio/loops block/block full/loop 4.wav" id="7_jmu3w"]
 [ext_resource type="PackedScene" uid="uid://bo5lpml26n7yf" path="res://Scenes/mouse.tscn" id="12_4ay51"]
+[ext_resource type="PackedScene" uid="uid://ptixcxeaekgw" path="res://Scenes/player.tscn" id="12_wc03o"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
@@ -100,11 +101,15 @@ position = Vector2(-239, -529)
 [node name="Speaker2" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
 position = Vector2(227, -532)
 
+[node name="CharacterBody2D" parent="Visible" instance=ExtResource("12_wc03o")]
+position = Vector2(-14, -481)
+
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -451)
 
 [node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
+metadata/_edit_lock_ = true
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]

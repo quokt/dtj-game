@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=14 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cl36ulcq58gn2" path="res://Scenes/speaker.tscn" id="6_21xkr"]
 [ext_resource type="Texture2D" uid="uid://hd2pdgmc2cq0" path="res://Assets/map.png" id="7_6bp64"]
+[ext_resource type="Texture2D" uid="uid://cmlcbo8uhqqkr" path="res://Assets/Speaker2.png" id="9_ynf5e"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
@@ -46,7 +47,6 @@ autoplay = true
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
-scale = Vector2(2, 2)
 texture = ExtResource("7_6bp64")
 
 [node name="Visible" type="Node2D" parent="."]
@@ -74,18 +74,28 @@ unique_name_in_owner = true
 
 [node name="Table" parent="Visible/Towers" instance=ExtResource("5_kry3j")]
 unique_name_in_owner = true
-position = Vector2(-1, 547)
-scale = Vector2(2, 2)
+position = Vector2(-8, -564)
+scale = Vector2(2.5, 2.5)
 
 [node name="Speaker" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
-position = Vector2(258, 514)
+position = Vector2(223, -531)
+
+[node name="Sprite2D" parent="Visible/Towers/Speaker" index="0"]
+metadata/_edit_lock_ = true
 
 [node name="Speaker2" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
-position = Vector2(-261, 513)
+position = Vector2(-221, -530)
+
+[node name="Sprite2D" parent="Visible/Towers/Speaker2" index="0"]
+texture = ExtResource("9_ynf5e")
+metadata/_edit_lock_ = true
 
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(0, 400)
+position = Vector2(-3, -451)
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]
+
+[editable path="Visible/Towers/Speaker"]
+[editable path="Visible/Towers/Speaker2"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=32 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dqftec3fkm1um" path="res://Audio/loops block/block full/loop 2.wav" id="5_3goxj"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cl36ulcq58gn2" path="res://Scenes/speaker.tscn" id="6_21xkr"]
+[ext_resource type="AudioStream" uid="uid://7fb2krrvui8e" path="res://Audio/loops block/boumboum.wav" id="6_jkdf5"]
 [ext_resource type="AudioStream" uid="uid://vpke6tjpxili" path="res://Audio/loops block/block full/loop 3.wav" id="6_mo28i"]
 [ext_resource type="Texture2D" uid="uid://hd2pdgmc2cq0" path="res://Assets/map.png" id="7_6bp64"]
 [ext_resource type="AudioStream" uid="uid://ctc72666gmxj" path="res://Audio/loops block/block full/loop 4.wav" id="7_jmu3w"]
@@ -16,47 +17,129 @@
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 10
-cooldown_time = 10.0
+enemy_amount = 1
+cooldown_time = 0.0
 
 [sub_resource type="Resource" id="Resource_o1kou"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 5
+enemy_amount = 1
 cooldown_time = 4.0
 
 [sub_resource type="Resource" id="Resource_sr6kx"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 20
-cooldown_time = 0.0
+enemy_amount = 1
+cooldown_time = 4.0
 
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_344ge"]
-clip_count = 4
-clip_0/name = &"Loop1"
+[sub_resource type="Resource" id="Resource_jkdf5"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_wsu2k"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_k12tt"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 0
+cooldown_time = 0.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_h1bgf"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_b3802"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_fevyy"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_hibaj"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_pdsj5"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_ee4r6"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_gt3je"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_3pmx8"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_u50mg"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 4.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="Resource" id="Resource_cbgmd"]
+script = ExtResource("2_yl0mw")
+enemy_amount = 1
+cooldown_time = 0.0
+metadata/_custom_type_script = "uid://bptn37gb8ldn6"
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_fdnlq"]
+clip_count = 5
+clip_0/name = &"Loop 1"
 clip_0/stream = ExtResource("4_uy6yx")
 clip_0/auto_advance = 1
 clip_0/next_clip = 1
-clip_1/name = &"Loop2"
+clip_1/name = &"Loop 2"
 clip_1/stream = ExtResource("5_3goxj")
 clip_1/auto_advance = 1
 clip_1/next_clip = 2
-clip_2/name = &"Loop3"
+clip_2/name = &"Loop 3"
 clip_2/stream = ExtResource("6_mo28i")
 clip_2/auto_advance = 1
 clip_2/next_clip = 3
-clip_3/name = &"Loop4"
+clip_3/name = &"Loop 4"
 clip_3/stream = ExtResource("7_jmu3w")
 clip_3/auto_advance = 1
-clip_3/next_clip = 0
+clip_3/next_clip = 4
+clip_4/name = &"Boumboum"
+clip_4/stream = ExtResource("6_jkdf5")
+clip_4/auto_advance = 1
+clip_4/next_clip = 4
 
 [node name="Main" type="Node"]
 script = ExtResource("1_itoj1")
-enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx")])
+enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx"), SubResource("Resource_jkdf5"), SubResource("Resource_wsu2k"), SubResource("Resource_k12tt"), SubResource("Resource_h1bgf"), SubResource("Resource_b3802"), SubResource("Resource_fevyy"), SubResource("Resource_hibaj"), SubResource("Resource_pdsj5"), SubResource("Resource_ee4r6"), SubResource("Resource_gt3je"), SubResource("Resource_3pmx8"), SubResource("Resource_u50mg"), SubResource("Resource_cbgmd")])
 
 [node name="GameTime" type="Node" parent="."]
 script = ExtResource("1_ow3qn")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamInteractive_344ge")
+stream = SubResource("AudioStreamInteractive_fdnlq")
 autoplay = true
 
 [node name="Background" type="Sprite2D" parent="."]

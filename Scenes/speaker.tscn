@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl36ulcq58gn2"]
+[gd_scene load_steps=5 format=3 uid="uid://cl36ulcq58gn2"]
 
 [ext_resource type="Script" path="res://Scripts/speaker.gd" id="1_rg5dd"]
 [ext_resource type="Texture2D" uid="uid://c8w7or8ra7kkj" path="res://Assets/Speaker2.2.png" id="2_4bkbu"]
+[ext_resource type="Shader" path="res://Shaders/soundwaves.gdshader" id="3_u5co3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwwde"]
+shader = ExtResource("3_u5co3")
+shader_parameter/chaos = 27.44
+shader_parameter/radius = 0.826
+shader_parameter/attenuation = 2.0
 
 [node name="Speaker" type="Node2D"]
 script = ExtResource("1_rg5dd")
@@ -10,3 +17,11 @@ script = ExtResource("1_rg5dd")
 texture_filter = 1
 scale = Vector2(1.8, 1.8)
 texture = ExtResource("2_4bkbu")
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+z_index = 1
+material = SubResource("ShaderMaterial_iwwde")
+offset_left = -27.0
+offset_top = -76.0
+offset_right = 28.0
+offset_bottom = 82.0

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo5lpml26n7yf"]
+
+[ext_resource type="Script" path="res://Scripts/mouse.gd" id="1_n8ynk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wmywi"]
+
+[node name="Mouse" type="Area2D"]
+script = ExtResource("1_n8ynk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wmywi")

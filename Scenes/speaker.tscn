@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cl36ulcq58gn2"]
+[gd_scene load_steps=6 format=3 uid="uid://cl36ulcq58gn2"]
 
 [ext_resource type="Script" path="res://Scripts/speaker.gd" id="1_rg5dd"]
 [ext_resource type="Texture2D" uid="uid://c8w7or8ra7kkj" path="res://Assets/Speaker2.2.png" id="2_4bkbu"]
@@ -9,6 +9,10 @@ shader = ExtResource("3_u5co3")
 shader_parameter/chaos = 7.773
 shader_parameter/radius = 0.826
 shader_parameter/attenuation = 2.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x2da6"]
+radius = 36.0
+height = 138.0
 
 [node name="Speaker" type="Node2D"]
 script = ExtResource("1_rg5dd")
@@ -25,3 +29,12 @@ offset_left = -27.0
 offset_top = -76.0
 offset_right = 28.0
 offset_bottom = 82.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, 10)
+shape = SubResource("CapsuleShape2D_x2da6")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

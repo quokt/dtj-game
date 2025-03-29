@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=17 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -11,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://vpke6tjpxili" path="res://Audio/loops block/block full/loop 3.wav" id="6_mo28i"]
 [ext_resource type="Texture2D" uid="uid://hd2pdgmc2cq0" path="res://Assets/map.png" id="7_6bp64"]
 [ext_resource type="AudioStream" uid="uid://ctc72666gmxj" path="res://Audio/loops block/block full/loop 4.wav" id="7_jmu3w"]
+[ext_resource type="PackedScene" uid="uid://bo5lpml26n7yf" path="res://Scenes/mouse.tscn" id="12_4ay51"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
@@ -67,8 +68,8 @@ texture = ExtResource("7_6bp64")
 [node name="BeatWaves" type="Node2D" parent="Visible"]
 script = ExtResource("2_2pvco")
 WAVE_LIFETIME = 8.0
-wave_speed = 16.0
-wave_accel = 120.0
+wave_speed = 1.0
+wave_accel = 6000.0
 wave_thickness = 1.0
 wave_start = 20.0
 color_table = Color(0.376471, 0.00392157, 0.576471, 1)
@@ -102,6 +103,8 @@ position = Vector2(-1, -380)
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(0, -451)
+
+[node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]

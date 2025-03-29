@@ -25,6 +25,7 @@ func spawn_enemies_from_wave(wave : EnemyWave) -> void:
 	for enemy in range(wave.enemy_amount):
 		var new_enemy = enemy_scene.instantiate()
 		%Enemies.add_child(new_enemy)
+		%Player.enemy_touched.connect(new_enemy.on_player_touched)
 		new_enemy.position = Vector2(randf_range(-320,320), %Camera.position.x-80.0)
 
 

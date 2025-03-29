@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal enemy_touched(enemy)
+
 @export var walk_speed : float
 @export var run_speed : float
 
@@ -18,3 +20,7 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2(move_toward(velocity.x, 0, walk_speed), move_toward(velocity.y, 0, walk_speed))
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	enemy_touched.emit()

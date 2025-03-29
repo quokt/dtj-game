@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://uklm5ku67n8e"]
+
+[node name="Main" type="Node"]
+
+[node name="GameTime" type="Node" parent="."]

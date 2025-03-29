@@ -17,14 +17,23 @@ var waves_array := []
 class Wave:
 	var elapsed : float = 0.0
 	var lifetime : float
+	var alpha : float = 1.0
 
 func _draw() -> void:
 	for tower in %Towers.get_children():
-		if tower.active == false:
-			continue
+		if tower.active:
+			tower.alpha = min(1.0, tower.alpha + get_physics_process_delta_time())
+		else:
+			tower.alpha = max(0.0, tower.alpha - get_physics_process_delta_time())
 		var color : Color = color_speaker
 		if tower == %Table : color = color_table
 		for wave in waves_array:
+			#if not tower.active:
+				#wave.alpha = max(0.0, wave.alpha - get_physics_process_delta_time())
+			#else:
+				#wave.alpha = min(1.0, wave.alpha + get_physics_process_delta_time())
+				#print(wave.alpha)
+			color = Color(color, wave.alpha*tower.alpha)
 			var radius : float = (wave.elapsed*wave.elapsed*wave_accel)*wave_speed*get_physics_process_delta_time()+wave_start
 			var thickness = (wave.lifetime-wave.elapsed)*(wave.lifetime-wave.elapsed)*wave_thickness*get_physics_process_delta_time()
 			draw_circle(tower.global_position, radius, color, false, thickness)

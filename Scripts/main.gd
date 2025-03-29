@@ -19,7 +19,6 @@ func _on_wave_timer_timeout() -> void:
 	spawn_enemies_from_wave(wave)
 	enemy_wave.emit(wave)
 	%WaveTimer.start(wave.cooldown_time)
-	print(%WaveTimer.wait_time)
 
 
 func spawn_enemies_from_wave(wave : EnemyWave) -> void:

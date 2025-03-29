@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://cl36ulcq58gn2"]
 
-[ext_resource type="Script" uid="uid://m7rvxduxu43p" path="res://Scripts/speaker.gd" id="1_rg5dd"]
+[ext_resource type="Script" path="res://Scripts/speaker.gd" id="1_rg5dd"]
 [ext_resource type="Texture2D" uid="uid://c8w7or8ra7kkj" path="res://Assets/Speaker2.2.png" id="2_4bkbu"]
-[ext_resource type="Shader" uid="uid://bhnh40awbyeda" path="res://Shaders/soundwaves.gdshader" id="3_u5co3"]
+[ext_resource type="Shader" path="res://Shaders/soundwaves.gdshader" id="3_u5co3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iwwde"]
 shader = ExtResource("3_u5co3")

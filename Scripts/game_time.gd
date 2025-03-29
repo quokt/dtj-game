@@ -2,7 +2,7 @@ extends Node
 
 signal beat
 
-var bpm : float = 120.0
+var bpm : float = 130.0
 @onready var sec_delta : float = 60.0/bpm
 	
 var elapsed_beat : float = 0.0

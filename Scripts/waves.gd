@@ -3,7 +3,6 @@ extends Node2D
 const WAVE_LIFETIME = 40.0
 
 var offset := 100.0
-var dj_pos := Vector2(1920.0/2.0, 1080.0-offset)
 
 var waves_array := []
 
@@ -13,7 +12,7 @@ class Wave:
 func _draw() -> void:
 	
 	for wave in waves_array:
-		draw_circle(dj_pos, wave.lifetime*600.0, Color.RED, false, sin(get_process_delta_time())*100.0)
+		draw_circle(%Table.global_position, wave.lifetime*600.0, Color.RED, false, sin(get_process_delta_time())*100.0)
 
 
 func _physics_process(delta: float) -> void:

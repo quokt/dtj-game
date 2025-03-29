@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://i7ttkcmfj2o4"]
+[gd_scene load_steps=3 format=3 uid="uid://i7ttkcmfj2o4"]
 
 [ext_resource type="Script" uid="uid://cfibia4nvnvg0" path="res://Scripts/table.gd" id="1_75djh"]
+[ext_resource type="Texture2D" uid="uid://rixngjmaqstj" path="res://icon.svg" id="2_4ppvu"]
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_75djh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.831317, 0.0176299, 0.559584, 1)
+texture = ExtResource("2_4ppvu")

@@ -21,8 +21,9 @@ func _on_wave_timer_timeout() -> void:
 	%WaveTimer.start(wave.cooldown_time)
 	print(%WaveTimer.wait_time)
 
+
 func spawn_enemies_from_wave(wave : EnemyWave) -> void:
 	for enemy in range(wave.enemy_amount):
 		var new_enemy = enemy_scene.instantiate()
 		%Enemies.add_child(new_enemy)
-		new_enemy.position = Vector2(randf_range(0,1920), randf_range(0,1080))
+		new_enemy.position = Vector2(randf_range(0,1920), randf_range(0, 100.0))

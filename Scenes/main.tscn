@@ -48,6 +48,10 @@ texture = ExtResource("7_6bp64")
 
 [node name="BeatWaves" type="Node2D" parent="Visible"]
 script = ExtResource("2_2pvco")
+WAVE_LIFETIME = 8.0
+wave_speed = 8.0
+wave_accel = 40.0
+thickness = 0.8
 
 [node name="Enemies" type="Node2D" parent="Visible"]
 unique_name_in_owner = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=13 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -24,6 +24,14 @@ script = ExtResource("2_yl0mw")
 enemy_amount = 20
 cooldown_time = 0.0
 
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_344ge"]
+clip_count = 2
+clip_0/name = &"Gameloop 1"
+clip_0/stream = ExtResource("4_344ge")
+clip_0/auto_advance = 0
+clip_1/name = &""
+clip_1/auto_advance = 0
+
 [node name="Main" type="Node"]
 script = ExtResource("1_itoj1")
 enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx")])
@@ -32,13 +40,13 @@ enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubR
 script = ExtResource("1_ow3qn")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_344ge")
+stream = SubResource("AudioStreamInteractive_344ge")
 autoplay = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 texture = ExtResource("7_6bp64")
 
 [node name="Visible" type="Node2D" parent="."]
@@ -47,7 +55,7 @@ texture = ExtResource("7_6bp64")
 script = ExtResource("2_2pvco")
 WAVE_LIFETIME = 8.0
 wave_speed = 16.0
-wave_accel = 60.0
+wave_accel = 120.0
 wave_thickness = 1.0
 wave_start = 20.0
 color_table = Color(0.376471, 0.00392157, 0.576471, 1)

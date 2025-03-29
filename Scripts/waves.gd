@@ -23,7 +23,9 @@ func _draw() -> void:
 		var color : Color = color_speaker
 		if tower == %Table : color = color_table
 		for wave in waves_array:
-			draw_circle(tower.global_position, (wave.elapsed*wave.elapsed*wave_accel)*wave_speed*get_physics_process_delta_time()+wave_start, color, false, (wave.lifetime-wave.elapsed)*(wave.lifetime-wave.elapsed)*wave_thickness*get_physics_process_delta_time())
+			var radius : float = (wave.elapsed*wave.elapsed*wave_accel)*wave_speed*get_physics_process_delta_time()+wave_start
+			var thickness = (wave.lifetime-wave.elapsed)*(wave.lifetime-wave.elapsed)*wave_thickness*get_physics_process_delta_time()
+			draw_circle(tower.global_position, radius, color, false, thickness)
 			draw_circle(tower.global_position, (wave.elapsed*wave.elapsed*wave_accel)*wave_speed*get_physics_process_delta_time()+wave_start, Color(color, 0.1), false, (wave.lifetime-wave.elapsed)*(wave.lifetime-wave.elapsed)*wave_thickness*20.0*get_physics_process_delta_time())
 func _physics_process(delta: float) -> void:
 	queue_redraw()

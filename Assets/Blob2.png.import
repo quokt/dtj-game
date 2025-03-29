@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvr1pe8ooge1a"
-path="res://.godot/imported/BlobRouge.png-b943467ffad2cd41b7856fc228c63cd1.ctex"
+uid="uid://dwsyl6recm76t"
+path="res://.godot/imported/Blob2.png-482ca6afcb302e3df95441223a7d70c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/BlobRouge.png"
-dest_files=["res://.godot/imported/BlobRouge.png-b943467ffad2cd41b7856fc228c63cd1.ctex"]
+source_file="res://Assets/Blob2.png"
+dest_files=["res://.godot/imported/Blob2.png-482ca6afcb302e3df95441223a7d70c8.ctex"]
 
 [params]
 

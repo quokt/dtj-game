@@ -3,6 +3,7 @@ extends Node2D
 @export var WAVE_LIFETIME = 5.0
 
 var offset := 100.0
+var shockwave_scene := preload("res://Scenes/shockwave.tscn")
 
 @export var wave_speed : float
 @export var wave_accel : float
@@ -49,11 +50,29 @@ func _physics_process(delta: float) -> void:
 		wave.elapsed += delta
 		if wave.elapsed >= wave.lifetime:
 			waves_array.erase(wave)
+			
+	
 
+var beat_count = 0
 
 func _on_beat() -> void:
+	
+	beat_count += 1
 	#print(self)
 	var new_wave := Wave.new()
 	new_wave.lifetime = WAVE_LIFETIME
 	waves_array.append(new_wave)
+	
+	# create shockwave
+	if beat_count%8 == 0:
+		for tower in %Towers.get_children():
+			if tower.active:
+				var new_shockwave = shockwave_scene.instantiate()
+				var shader_position = remap(tower.position.x, -239, 227, 0.1, 0.8 )
+				%ShockWaves.add_child(new_shockwave)
+				new_shockwave.set_shader_position(shader_position, 0.1)
+				print(new_shockwave.position)
+				print(tower.position)
+			
+		
 	return

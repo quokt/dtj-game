@@ -167,9 +167,6 @@ unique_name_in_owner = true
 wait_time = 0.001
 autostart = true
 
-[node name="ShockWaves" type="Node2D" parent="Visible/BeatWaves"]
-unique_name_in_owner = true
-
 [node name="Enemies" type="Node2D" parent="Visible"]
 unique_name_in_owner = true
 

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
 [ext_resource type="Script" uid="uid://b28o2n08nhmk2" path="res://Scripts/waves.gd" id="2_2pvco"]
 [ext_resource type="Script" uid="uid://bptn37gb8ldn6" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
+[ext_resource type="AudioStream" uid="uid://dsqes251nmpmd" path="res://Audio/gameloop1.wav" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cl36ulcq58gn2" path="res://Scenes/speaker.tscn" id="6_21xkr"]
 [ext_resource type="Texture2D" uid="uid://hd2pdgmc2cq0" path="res://Assets/map.png" id="7_6bp64"]
@@ -23,8 +24,6 @@ script = ExtResource("2_yl0mw")
 enemy_amount = 20
 cooldown_time = 0.0
 
-[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_gsk60"]
-
 [node name="Main" type="Node"]
 script = ExtResource("1_itoj1")
 enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx")])
@@ -32,16 +31,14 @@ enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubR
 [node name="GameTime" type="Node" parent="."]
 script = ExtResource("1_ow3qn")
 
-[node name="WaveTimer" type="Timer" parent="GameTime"]
-unique_name_in_owner = true
-autostart = true
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamWAV_gsk60")
+stream = ExtResource("4_344ge")
+autoplay = true
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
+scale = Vector2(4, 4)
 texture = ExtResource("7_6bp64")
 
 [node name="Visible" type="Node2D" parent="."]
@@ -49,9 +46,17 @@ texture = ExtResource("7_6bp64")
 [node name="BeatWaves" type="Node2D" parent="Visible"]
 script = ExtResource("2_2pvco")
 WAVE_LIFETIME = 8.0
-wave_speed = 8.0
-wave_accel = 40.0
-thickness = 0.8
+wave_speed = 16.0
+wave_accel = 60.0
+wave_thickness = 1.0
+wave_start = 20.0
+color_table = Color(0.376471, 0.00392157, 0.576471, 1)
+color_speaker = Color(0.752941, 0.00784314, 0.294118, 1)
+
+[node name="WaveTimer" type="Timer" parent="Visible/BeatWaves"]
+unique_name_in_owner = true
+wait_time = 0.001
+autostart = true
 
 [node name="Enemies" type="Node2D" parent="Visible"]
 unique_name_in_owner = true
@@ -61,16 +66,18 @@ unique_name_in_owner = true
 
 [node name="Table" parent="Visible/Towers" instance=ExtResource("5_kry3j")]
 unique_name_in_owner = true
-position = Vector2(-9, 148)
+position = Vector2(-1, 547)
+scale = Vector2(2, 2)
 
 [node name="Speaker" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
-position = Vector2(265, 94)
+position = Vector2(258, 514)
 
 [node name="Speaker2" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
-position = Vector2(-278, 74)
+position = Vector2(-261, 513)
 
 [node name="Camera" type="Camera2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, 400)
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
-[connection signal="timeout" from="GameTime/WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]

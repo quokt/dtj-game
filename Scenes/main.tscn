@@ -155,7 +155,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect2" type="ColorRect" parent="Camera/TitleScreen"]
+[node name="ColorRect3" type="ColorRect" parent="Camera/TitleScreen"]
 material = SubResource("ShaderMaterial_30fnu")
 layout_mode = 0
 offset_right = 640.0

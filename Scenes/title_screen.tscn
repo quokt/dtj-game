@@ -16,6 +16,17 @@
 [ext_resource type="Texture2D" uid="uid://dyghd1na74v6v" path="res://Assets/AnimationButton4GameRules.png" id="12_n1vua"]
 [ext_resource type="FontFile" uid="uid://bnlakaxtphcxj" path="res://Assets/PoliceRuleScreen/upheavtt.ttf" id="15_fqeqa"]
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_g47dc"]
+frames = 4
+frame_0/texture = ExtResource("9_yn12h")
+frame_0/duration = 0.25
+frame_1/texture = ExtResource("10_sx1vw")
+frame_1/duration = 0.25
+frame_2/texture = ExtResource("11_a4w4k")
+frame_2/duration = 0.25
+frame_3/texture = ExtResource("12_n1vua")
+frame_3/duration = 0.25
+
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
 
@@ -92,17 +103,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AnimatedTexture" id="AnimatedTexture_g47dc"]
-frames = 4
-frame_0/texture = ExtResource("9_yn12h")
-frame_0/duration = 0.25
-frame_1/texture = ExtResource("10_sx1vw")
-frame_1/duration = 0.25
-frame_2/texture = ExtResource("11_a4w4k")
-frame_2/duration = 0.25
-frame_3/texture = ExtResource("12_n1vua")
-frame_3/duration = 0.25
-
 [node name="TitleScreen" type="TextureRect"]
 process_mode = 3
 offset_left = -320.0
@@ -111,6 +111,58 @@ offset_right = 320.0
 offset_bottom = 181.0
 texture = ExtResource("1_c7o0y")
 script = ExtResource("1_t6guj")
+
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 212.0
+offset_top = 201.0
+offset_right = 276.0
+offset_bottom = 233.0
+scale = Vector2(3.2, 3.2)
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("1_y7qto")
+texture_pressed = ExtResource("1_y7qto")
+texture_hover = ExtResource("3_b73nm")
+
+[node name="RulesButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 17.0
+offset_top = 254.0
+offset_right = 81.0
+offset_bottom = 286.0
+scale = Vector2(3, 3)
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("12_n1vua")
+texture_pressed = ExtResource("12_n1vua")
+texture_hover = SubResource("AnimatedTexture_g47dc")
+
+[node name="RulesButton2" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 435.0
+offset_top = 165.0
+offset_right = 499.0
+offset_bottom = 197.0
+scale = Vector2(3, 3)
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("12_n1vua")
+texture_pressed = ExtResource("12_n1vua")
+texture_hover = SubResource("AnimatedTexture_g47dc")
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 422.0
+offset_top = 259.0
+offset_right = 486.0
+offset_bottom = 291.0
+scale = Vector2(3, 3)
+focus_mode = 0
+texture_normal = ExtResource("2_tjx30")
+texture_pressed = ExtResource("2_tjx30")
+texture_hover = ExtResource("3_13vrx")
+stretch_mode = 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
@@ -137,52 +189,13 @@ stream = ExtResource("4_fisst")
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(328, 107)
-scale = Vector2(3.61645, 3.458)
+position = Vector2(310, 95)
+scale = Vector2(3.4801, 3.458)
 sprite_frames = SubResource("SpriteFrames_t8ndq")
 autoplay = "default"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_1vjgs")
-
-[node name="PlayButton" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 213.0
-offset_top = 214.0
-offset_right = 277.0
-offset_bottom = 246.0
-scale = Vector2(3.2, 3.2)
-focus_mode = 0
-action_mode = 0
-texture_normal = ExtResource("1_y7qto")
-texture_pressed = ExtResource("1_y7qto")
-texture_hover = ExtResource("3_b73nm")
-
-[node name="RulesButton" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 17.0
-offset_top = 254.0
-offset_right = 81.0
-offset_bottom = 286.0
-scale = Vector2(3, 3)
-focus_mode = 0
-action_mode = 0
-texture_normal = ExtResource("12_n1vua")
-texture_pressed = ExtResource("12_n1vua")
-texture_hover = SubResource("AnimatedTexture_g47dc")
-
-[node name="ExitButton" type="TextureButton" parent="."]
-layout_mode = 2
-offset_left = 422.0
-offset_top = 259.0
-offset_right = 486.0
-offset_bottom = 291.0
-scale = Vector2(3, 3)
-focus_mode = 0
-texture_normal = ExtResource("2_tjx30")
-texture_pressed = ExtResource("2_tjx30")
-texture_hover = ExtResource("3_13vrx")
-stretch_mode = 3
 
 [node name="ColorRect" type="TextureRect" parent="."]
 visible = false
@@ -221,7 +234,46 @@ text = "Red blobs are trying to propage CHAOS in the rave and destroy the speake
 autowrap_mode = 3
 metadata/_edit_lock_ = true
 
+[node name="ColorRect2" type="TextureRect" parent="."]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 627.0
+offset_bottom = 350.0
+mouse_filter = 2
+texture = ExtResource("11_jhu3b")
+
+[node name="ExitButton2" type="TextureButton" parent="ColorRect2"]
+layout_mode = 2
+offset_left = 375.0
+offset_top = 227.0
+offset_right = 439.0
+offset_bottom = 259.0
+scale = Vector2(3, 3)
+focus_mode = 0
+texture_normal = ExtResource("2_tjx30")
+texture_pressed = ExtResource("2_tjx30")
+texture_hover = ExtResource("3_13vrx")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 36.0
+offset_right = 321.0
+offset_bottom = 292.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_fqeqa")
+text = "Red blobs are trying to propage CHAOS in the rave and destroy the speakers. You have to stop them by converting them to Tekno. Be careful, they are fast and furious..."
+autowrap_mode = 3
+metadata/_edit_lock_ = true
+
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="RulesButton" to="." method="_on_rules_button_pressed"]
+[connection signal="pressed" from="RulesButton2" to="." method="_on_rules_button_pressed"]
 [connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="ColorRect/ExitButton2" to="." method="_on_exit_button_2_pressed"]
+[connection signal="pressed" from="ColorRect2/ExitButton2" to="." method="_on_exit_button_2_pressed"]

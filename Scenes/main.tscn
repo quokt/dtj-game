@@ -1,9 +1,9 @@
 [gd_scene load_steps=32 format=3 uid="uid://uklm5ku67n8e"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
-[ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
-[ext_resource type="Script" path="res://Scripts/waves.gd" id="2_2pvco"]
-[ext_resource type="Script" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
+[ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
+[ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
+[ext_resource type="Script" uid="uid://b28o2n08nhmk2" path="res://Scripts/waves.gd" id="2_2pvco"]
+[ext_resource type="Script" uid="uid://bptn37gb8ldn6" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
 [ext_resource type="AudioStream" uid="uid://cj5voopdx8kqm" path="res://Audio/loops block/block full/loop 1.wav" id="4_uy6yx"]
 [ext_resource type="AudioStream" uid="uid://dqftec3fkm1um" path="res://Audio/loops block/block full/loop 2.wav" id="5_3goxj"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
@@ -109,27 +109,43 @@ cooldown_time = 0.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_fdnlq"]
-clip_count = 5
+clip_count = 9
 clip_0/name = &"Loop 1"
 clip_0/stream = ExtResource("4_uy6yx")
 clip_0/auto_advance = 1
 clip_0/next_clip = 1
-clip_1/name = &"Loop 2"
-clip_1/stream = ExtResource("5_3goxj")
+clip_1/name = &"Loop 1"
+clip_1/stream = ExtResource("4_uy6yx")
 clip_1/auto_advance = 1
 clip_1/next_clip = 2
-clip_2/name = &"Loop 3"
-clip_2/stream = ExtResource("6_mo28i")
+clip_2/name = &"Loop 2"
+clip_2/stream = ExtResource("5_3goxj")
 clip_2/auto_advance = 1
 clip_2/next_clip = 3
-clip_3/name = &"Loop 4"
-clip_3/stream = ExtResource("7_jmu3w")
+clip_3/name = &"Loop 2"
+clip_3/stream = ExtResource("5_3goxj")
 clip_3/auto_advance = 1
 clip_3/next_clip = 4
-clip_4/name = &"Boumboum"
-clip_4/stream = ExtResource("6_jkdf5")
+clip_4/name = &"Loop 3"
+clip_4/stream = ExtResource("6_mo28i")
 clip_4/auto_advance = 1
-clip_4/next_clip = 4
+clip_4/next_clip = 5
+clip_5/name = &"Loop 3"
+clip_5/stream = ExtResource("6_mo28i")
+clip_5/auto_advance = 1
+clip_5/next_clip = 6
+clip_6/name = &"Loop 4"
+clip_6/stream = ExtResource("7_jmu3w")
+clip_6/auto_advance = 1
+clip_6/next_clip = 7
+clip_7/name = &"Loop 4"
+clip_7/stream = ExtResource("7_jmu3w")
+clip_7/auto_advance = 1
+clip_7/next_clip = 8
+clip_8/name = &"Boumboum"
+clip_8/stream = ExtResource("6_jkdf5")
+clip_8/auto_advance = 1
+clip_8/next_clip = 8
 
 [node name="Main" type="Node"]
 script = ExtResource("1_itoj1")

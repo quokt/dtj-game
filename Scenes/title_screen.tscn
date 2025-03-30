@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://cgpqgrajqlso2"]
+[gd_scene load_steps=20 format=3 uid="uid://cgpqgrajqlso2"]
 
+[ext_resource type="Texture2D" uid="uid://c16p7fsjwm4gr" path="res://Assets/titlescreenbackground.png" id="1_c7o0y"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_t6guj"]
 [ext_resource type="Texture2D" uid="uid://cleyewoal07ln" path="res://Assets/play_button.png" id="1_y7qto"]
 [ext_resource type="Texture2D" uid="uid://g5qfogp6uccb" path="res://Assets/exit_button.png" id="2_tjx30"]
@@ -86,13 +87,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="TitleScreen" type="ColorRect"]
+[node name="TitleScreen" type="TextureRect"]
 process_mode = 3
 offset_left = -320.0
 offset_top = -180.0
 offset_right = 320.0
 offset_bottom = 181.0
-color = Color(0.223529, 0.00392157, 0.47451, 1)
+texture = ExtResource("1_c7o0y")
 script = ExtResource("1_t6guj")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]

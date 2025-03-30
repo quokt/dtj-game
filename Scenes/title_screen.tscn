@@ -11,18 +11,6 @@
 
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-320, -180)]
-}
 
 [sub_resource type="Animation" id="Animation_nb767"]
 resource_name = "appear"
@@ -118,6 +106,7 @@ metadata/_edit_group_ = true
 
 [node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 action_mode = 0
 texture_normal = ExtResource("1_y7qto")
 texture_pressed = ExtResource("1_y7qto")
@@ -125,6 +114,7 @@ texture_hover = ExtResource("3_b73nm")
 
 [node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 texture_normal = ExtResource("2_tjx30")
 texture_pressed = ExtResource("2_tjx30")
 texture_hover = ExtResource("3_13vrx")
@@ -143,6 +133,7 @@ position = Vector2(-1, 4)
 polygon = PackedVector2Array(247, 281, 245, 333, 384, 333, 386, 287)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+reset_on_save = false
 libraries = {
 "": SubResource("AnimationLibrary_xcpyg")
 }

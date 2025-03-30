@@ -19,7 +19,7 @@ enum COLOR_STATE {BLUE, RED}
 var color_state = COLOR_STATE.RED
 
 enum STATE {ATTACK, FOLLOW, START, STUN}
-var state : STATE = STATE.START
+var state : STATE = STATE.ATTACK
 
 @export var stun_time = 3.00
 var stun_elapsed : float = 0.0
@@ -80,7 +80,7 @@ func _ready() -> void:
 	get_tree().get_first_node_in_group("gametime").tempo.connect(on_tempo)
 	print(get_tree().get_nodes_in_group("towers"))
 	attack_target = Vector2(get_tree().get_nodes_in_group("towers")[randi()%get_tree().get_nodes_in_group("towers").size()].position)
-	set_color_state(COLOR_STATE.BLUE)
+	set_color_state(COLOR_STATE.RED)
 	if not override_target == null:
 		base_target = Vector2(override_target.position.x + randf_range(10.0,60.0), override_target.position.y + randf_range(10.0,40.0))
 		dance_target = Vector2(override_target.position.x + randf_range(10.0,60.0), override_target.position.y + randf_range(10.0,40.0))

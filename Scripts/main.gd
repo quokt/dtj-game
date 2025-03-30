@@ -1,5 +1,7 @@
 extends Node
 
+var score : float = 0.0
+
 var enemy_scene := preload("res://Scenes/enemy.tscn")
 
 @export var enemy_waves : Array[EnemyWave]
@@ -22,6 +24,10 @@ func _ready() -> void:
 	%Player.enemy_touched.connect(on_player_touched_enemy)
 	_on_wave_timer_timeout()
 	get_window().mode = Window.MODE_WINDOWED
+
+func _process(delta: float) -> void:
+	%Label.text = str(score)
+
 
 func _on_wave_timer_timeout() -> void:
 	if enemy_waves.is_empty():
@@ -46,5 +52,6 @@ func on_player_touched_enemy(enemy) -> void:
 
 
 func _on_speaker_clicked(ref: Tower) -> void:
-	for child in %Towers.get_children():
-		child.active = child == ref
+	ref.active = not ref.active
+	#for child in %Towers.get_children():
+		#child.active = child == ref

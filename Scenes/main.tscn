@@ -156,7 +156,7 @@ size = Vector2(4.82039, 153.765)
 resource_local_to_scene = true
 size = Vector2(76.9873, 15.3284)
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" groups=["main"]]
 script = ExtResource("1_itoj1")
 enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx"), SubResource("Resource_jkdf5"), SubResource("Resource_wsu2k"), SubResource("Resource_k12tt"), SubResource("Resource_h1bgf"), SubResource("Resource_b3802"), SubResource("Resource_fevyy"), SubResource("Resource_hibaj"), SubResource("Resource_pdsj5"), SubResource("Resource_ee4r6"), SubResource("Resource_gt3je"), SubResource("Resource_3pmx8"), SubResource("Resource_u50mg"), SubResource("Resource_cbgmd")])
 
@@ -178,10 +178,14 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GameTime" type="Node" parent="."]
+unique_name_in_owner = true
 script = ExtResource("1_ow3qn")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MainAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
 stream = SubResource("AudioStreamInteractive_fdnlq")
+volume_db = -80.0
 autoplay = true
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -233,6 +237,14 @@ position = Vector2(227, -532)
 [node name="Player" parent="Visible" instance=ExtResource("12_wc03o")]
 unique_name_in_owner = true
 position = Vector2(-14, -481)
+
+[node name="Label" type="Label" parent="Visible/Player"]
+unique_name_in_owner = true
+z_index = 9
+offset_left = -9.0
+offset_top = 65.0
+offset_right = 31.0
+offset_bottom = 88.0
 
 [node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
 metadata/_edit_lock_ = true

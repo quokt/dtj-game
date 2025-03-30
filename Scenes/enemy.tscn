@@ -118,6 +118,7 @@ collision_layer = 11
 script = ExtResource("1_y4ntl")
 min_damage = 1.0
 max_damage = 5.0
+score_increment = 0.003
 
 [node name="Blue" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

@@ -21,11 +21,15 @@ var color_state = COLOR_STATE.BLUE
 enum STATE {ATTACK, FOLLOW, START}
 var state : STATE = STATE.START
 
+@export var score_increment : float
+
 var wait_time : float = randf_range(0.5,3.0)
 var elapsed : float = 0.0
 var dance_target := Vector2(base_target.x + randf_range(10.0,60.0), base_target.y + randf_range(10.0,40.0))
 var attack_target : Vector2
 func _physics_process(delta: float) -> void:
+	if color_state == COLOR_STATE.BLUE:
+		get_tree().get_first_node_in_group("main").score += score_increment
 	if randi()%10000 == 0:
 		set_color_state(COLOR_STATE.RED)
 	elapsed += delta

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cxfx6bw53bvmn"]
+[gd_scene load_steps=23 format=3 uid="uid://cxfx6bw53bvmn"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_y4ntl"]
 [ext_resource type="Texture2D" uid="uid://cn7ctc2sfsuwt" path="res://Assets/Blob1Animation.png" id="2_1bjh7"]
@@ -57,10 +57,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1lmmp"]
-radius = 12.0416
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_1f0kj"]
-radius = 8.48528
+radius = 11.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8c817"]
 atlas = ExtResource("3_4ucpf")
@@ -119,7 +116,7 @@ shader_parameter/radius = 1.0
 shader_parameter/attenuation = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_u8fr4"]
-radius = 14.0
+radius = 17.0
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 11
@@ -134,15 +131,10 @@ sprite_frames = SubResource("SpriteFrames_cp0cj")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3, 0)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_1lmmp")
 one_way_collision_margin = 0.0
 debug_color = Color(0.861234, 0, 0.231856, 0.42)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(8, 4)
-shape = SubResource("CircleShape2D_1f0kj")
-debug_color = Color(0.994398, 0, 0.222713, 0.42)
 
 [node name="Red" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -169,3 +161,4 @@ offset_bottom = 43.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-1, 0)
 shape = SubResource("CircleShape2D_u8fr4")
+metadata/_edit_lock_ = true

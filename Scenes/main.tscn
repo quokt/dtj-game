@@ -177,7 +177,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameTime" type="Node" parent="."]
+[node name="GameTime" type="Node" parent="." groups=["gametime"]]
 unique_name_in_owner = true
 script = ExtResource("1_ow3qn")
 

@@ -16,10 +16,14 @@ signal touched_speaker()
 @export var override_target : Node2D = null
 
 enum COLOR_STATE {BLUE, RED}
-var color_state = COLOR_STATE.BLUE
+var color_state = COLOR_STATE.RED
 
-enum STATE {ATTACK, FOLLOW, START}
+enum STATE {ATTACK, FOLLOW, START, STUN}
 var state : STATE = STATE.START
+
+@export var stun_time = 3.00
+var stun_elapsed : float = 0.0
+var before_stun_state = STATE.FOLLOW
 
 @export var score_increment : float
 
@@ -47,6 +51,12 @@ func _physics_process(delta: float) -> void:
 				wait_time = randf_range(0.5,3.0)
 		STATE.ATTACK:
 			velocity = (attack_target - position).normalized() * attack_speed * delta
+		STATE.STUN:
+			stun_elapsed += delta
+			velocity = Vector2(0, 0)
+			if stun_elapsed >= stun_time:
+				state = before_stun_state
+
 	move_and_slide()
 
 func set_color_state(new_color_state : COLOR_STATE) -> void:
@@ -67,6 +77,7 @@ func set_color_state(new_color_state : COLOR_STATE) -> void:
 
 
 func _ready() -> void:
+	get_tree().get_first_node_in_group("gametime").tempo.connect(on_tempo)
 	print(get_tree().get_nodes_in_group("towers"))
 	attack_target = Vector2(get_tree().get_nodes_in_group("towers")[randi()%get_tree().get_nodes_in_group("towers").size()].position)
 	set_color_state(COLOR_STATE.BLUE)
@@ -80,6 +91,11 @@ func on_player_touched() -> void:
 	$AudioStreamPlayer2D.play()
 	set_color_state(COLOR_STATE.BLUE)
 
+func on_tempo():
+	before_stun_state = state
+	stun_elapsed = 0
+	state = STATE.STUN
+	pass
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Tower:

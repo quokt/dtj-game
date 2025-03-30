@@ -1,4 +1,4 @@
-extends ColorRect
+extends TextureRect
 
 
 func _ready() -> void:
@@ -9,8 +9,6 @@ func on_gameover() -> void:
 	get_tree().paused = true
 	$AudioStreamPlayer.volume_db = 0
 	%MainAudioStreamPlayer.volume_db = -80.0
-	await(get_tree().create_timer(5).timeout)
-
 	$AnimationPlayer.play("appear")
 	await($AnimationPlayer.animation_finished)
 
@@ -30,3 +28,7 @@ func _on_play_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit(0)
+
+
+func _on_texture_button_pressed() -> void:
+	%TitleScreen.on_pause()

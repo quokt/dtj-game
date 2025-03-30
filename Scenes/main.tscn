@@ -146,7 +146,7 @@ clip_7/next_clip = 8
 clip_8/name = &"Boumboum"
 clip_8/stream = ExtResource("6_jkdf5")
 clip_8/auto_advance = 1
-clip_8/next_clip = 8
+clip_8/next_clip = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1vpx"]
 resource_local_to_scene = true

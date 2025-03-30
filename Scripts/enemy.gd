@@ -7,6 +7,9 @@ signal touched_speaker()
 @export var speed = 2000.0
 @export var attack_speed = 1000.0
 
+@export var min_damage : float
+@export var max_damage : float
+
 @export var idle_min_displacement : Vector2
 @export var idle_max_displacement : Vector2
 
@@ -75,4 +78,4 @@ func on_player_touched() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body is Tower:
-		pass
+		body.take_damage(randf_range(min_damage, max_damage))

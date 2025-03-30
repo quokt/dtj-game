@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 signal enemy_touched(enemy)
 
-@export var walk_speed : float
-@export var run_speed : float
+#@export var walk_speed : float
+#@export var run_speed : float
+var walk_speed = 300
+var run_speed = 300
 
 func _physics_process(_delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

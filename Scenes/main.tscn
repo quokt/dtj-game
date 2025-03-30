@@ -20,35 +20,35 @@
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 0.0
+enemy_amount = 3
+cooldown_time = 5.0
 
 [sub_resource type="Resource" id="Resource_o1kou"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 6
+cooldown_time = 13.0
 
 [sub_resource type="Resource" id="Resource_sr6kx"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 9
+cooldown_time = 21.0
 
 [sub_resource type="Resource" id="Resource_jkdf5"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 15
+cooldown_time = 31.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_wsu2k"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 20
+cooldown_time = 30.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_k12tt"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 0
-cooldown_time = 0.0
+enemy_amount = 20
+cooldown_time = 30.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_h1bgf"]
@@ -263,7 +263,6 @@ position = Vector2(227, -532)
 [node name="Player" parent="Visible" instance=ExtResource("12_wc03o")]
 unique_name_in_owner = true
 position = Vector2(-14, -481)
-walk_speed = 50.0
 
 [node name="Label" type="Label" parent="Visible/Player"]
 unique_name_in_owner = true

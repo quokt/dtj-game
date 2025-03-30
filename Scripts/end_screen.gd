@@ -2,10 +2,13 @@ extends TextureRect
 
 
 func _ready() -> void:
+	$AudioStreamPlayer.play()
+	$AudioStreamPlayer.playing = true
 	$AudioStreamPlayer.volume_db = -80.0
 	
 	
 func on_gameover() -> void:
+	$AudioStreamPlayer.play()
 	%ScoreLabel.get_parent().visible = false
 	$TextureRect/ScoreLabel.text = str(int(get_tree().get_first_node_in_group("main").score))
 	get_tree().paused = true

@@ -3,7 +3,7 @@ extends Node
 var score : float = 0.0
 var global_chaos : float
 
-var max_global_chaos : float = 30.0
+var max_global_chaos : float = 26.56
 var win_score : float = 1000000.0
 
 var enemy_scene := preload("res://Scenes/enemy.tscn")

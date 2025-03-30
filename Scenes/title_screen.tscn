@@ -1,5 +1,6 @@
-[gd_scene load_steps=18 format=3 uid="uid://cgpqgrajqlso2"]
+[gd_scene load_steps=21 format=3 uid="uid://cgpqgrajqlso2"]
 
+[ext_resource type="Texture2D" uid="uid://c16p7fsjwm4gr" path="res://Assets/titlescreenbackground.png" id="1_c7o0y"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_t6guj"]
 [ext_resource type="Texture2D" uid="uid://cleyewoal07ln" path="res://Assets/play_button.png" id="1_y7qto"]
 [ext_resource type="Texture2D" uid="uid://g5qfogp6uccb" path="res://Assets/exit_button.png" id="2_tjx30"]
@@ -7,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://loy3uyei8q1l" path="res://Assets/play_button.tres" id="3_b73nm"]
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="4_fisst"]
 [ext_resource type="Texture2D" uid="uid://dy5ktyum65nu7" path="res://Assets/TitleSreen.png" id="7_2bvlb"]
+[ext_resource type="Texture2D" uid="uid://btwdaiq35ba31" path="res://Assets/AnimationButtonGameRules.png" id="7_m1qv4"]
 [ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_1vjgs"]
+[ext_resource type="Texture2D" uid="uid://b287d8vvdohcv" path="res://Assets/BackgroundGameRules.png" id="11_jhu3b"]
 
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
@@ -85,48 +88,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="TitleScreen" type="ColorRect"]
+[node name="TitleScreen" type="TextureRect"]
 process_mode = 3
 offset_left = -320.0
 offset_top = -180.0
 offset_right = 320.0
 offset_bottom = 181.0
-color = Color(0.223529, 0.00392157, 0.47451, 1)
+texture = ExtResource("1_c7o0y")
 script = ExtResource("1_t6guj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 219.0
-offset_top = 168.0
-offset_right = 283.0
-offset_bottom = 232.0
-scale = Vector2(3, 3)
-theme_override_constants/separation = 0
-metadata/_edit_group_ = true
-
-[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-action_mode = 0
-texture_normal = ExtResource("1_y7qto")
-texture_pressed = ExtResource("1_y7qto")
-texture_hover = ExtResource("3_b73nm")
-
-[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
-layout_mode = 2
-focus_mode = 0
-texture_normal = ExtResource("2_tjx30")
-texture_pressed = ExtResource("2_tjx30")
-texture_hover = ExtResource("3_13vrx")
-stretch_mode = 3
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(-1, 4)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(246, 176, 243, 237, 385, 251, 390, 169)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
+visible = false
 position = Vector2(-1, 4)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2"]
@@ -143,13 +122,78 @@ stream = ExtResource("4_fisst")
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(322, 88)
-scale = Vector2(2.93164, 2.85156)
+position = Vector2(328, 107)
+scale = Vector2(3.61645, 3.458)
 sprite_frames = SubResource("SpriteFrames_t8ndq")
 autoplay = "default"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_1vjgs")
 
-[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[node name="PlayButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 213.0
+offset_top = 214.0
+offset_right = 277.0
+offset_bottom = 246.0
+scale = Vector2(3.2, 3.2)
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("1_y7qto")
+texture_pressed = ExtResource("1_y7qto")
+texture_hover = ExtResource("3_b73nm")
+
+[node name="RulesButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 17.0
+offset_top = 254.0
+offset_right = 81.0
+offset_bottom = 286.0
+scale = Vector2(3, 3)
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("7_m1qv4")
+texture_pressed = ExtResource("7_m1qv4")
+texture_hover = ExtResource("7_m1qv4")
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 422.0
+offset_top = 259.0
+offset_right = 486.0
+offset_bottom = 291.0
+scale = Vector2(3, 3)
+focus_mode = 0
+texture_normal = ExtResource("2_tjx30")
+texture_pressed = ExtResource("2_tjx30")
+texture_hover = ExtResource("3_13vrx")
+stretch_mode = 3
+
+[node name="ColorRect" type="TextureRect" parent="."]
+visible = false
+z_index = 10
+layout_mode = 0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 627.0
+offset_bottom = 350.0
+mouse_filter = 2
+texture = ExtResource("11_jhu3b")
+
+[node name="ExitButton2" type="TextureButton" parent="ColorRect"]
+layout_mode = 2
+offset_left = 32.0
+offset_top = 212.0
+offset_right = 96.0
+offset_bottom = 244.0
+scale = Vector2(3, 3)
+focus_mode = 0
+texture_normal = ExtResource("2_tjx30")
+texture_pressed = ExtResource("2_tjx30")
+texture_hover = ExtResource("3_13vrx")
+stretch_mode = 3
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="RulesButton" to="." method="_on_rules_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="ColorRect/ExitButton2" to="." method="_on_exit_button_2_pressed"]

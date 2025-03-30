@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cl36ulcq58gn2"]
+[gd_scene load_steps=12 format=3 uid="uid://cl36ulcq58gn2"]
 
 [ext_resource type="Script" path="res://Scripts/speaker.gd" id="1_rg5dd"]
 [ext_resource type="Texture2D" uid="uid://bxqfdg77uf8hk" path="res://Assets/Speaker2.2-anim.png" id="2_ny6sn"]
+[ext_resource type="AudioStream" uid="uid://gel31u1jf4lu" path="res://Audio/blob sounds/fx/damage speaker.wav" id="3_flmfu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_marxr"]
 atlas = ExtResource("2_ny6sn")
@@ -140,6 +141,9 @@ priority = 1
 position = Vector2(1.5, 15)
 shape = SubResource("RectangleShape2D_hxo41")
 debug_color = Color(0.979921, 0, 0.384029, 0.42)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_flmfu")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

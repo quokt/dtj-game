@@ -15,6 +15,7 @@ func on_pause() -> void:
 
 
 func _on_play_button_pressed() -> void:
+	$AudioStreamPlayer2D.play()
 	$AnimationPlayer.play("vanish")
 	$AudioStreamPlayer.volume_db = -80.0
 	%MainAudioStreamPlayer.volume_db = 0

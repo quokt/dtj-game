@@ -77,6 +77,7 @@ func _ready() -> void:
 
 
 func on_player_touched() -> void:
+	$AudioStreamPlayer2D.play()
 	set_color_state(COLOR_STATE.BLUE)
 
 

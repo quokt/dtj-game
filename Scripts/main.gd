@@ -8,6 +8,7 @@ signal enemy_wave(enemy_wave : EnemyWave)
 
 
 func _ready() -> void:
+	%Player.enemy_touched.connect(on_player_touched_enemy)
 	_on_wave_timer_timeout()
 
 
@@ -25,8 +26,12 @@ func spawn_enemies_from_wave(wave : EnemyWave) -> void:
 	for enemy in range(wave.enemy_amount):
 		var new_enemy = enemy_scene.instantiate()
 		%Enemies.add_child(new_enemy)
-		%Player.enemy_touched.connect(new_enemy.on_player_touched)
+		
 		new_enemy.position = Vector2(randf_range(-320,320), %Camera.position.x-80.0)
+
+
+func on_player_touched_enemy(enemy) -> void:
+	enemy.on_player_touched()
 
 
 func _on_speaker_clicked(ref: Tower) -> void:

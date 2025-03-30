@@ -92,6 +92,7 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
 stream = ExtResource("6_e0yb1")
+volume_db = -80.0
 autoplay = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]

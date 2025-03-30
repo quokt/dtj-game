@@ -1,0 +1,46 @@
+[gd_resource type="AudioStreamInteractive" load_steps=6 format=3 uid="uid://jpeywvklon7r"]
+
+[ext_resource type="AudioStream" uid="uid://cj5voopdx8kqm" path="res://Audio/loops block/block full/loop 1.wav" id="1_usqb6"]
+[ext_resource type="AudioStream" uid="uid://dqftec3fkm1um" path="res://Audio/loops block/block full/loop 2.wav" id="2_ot8rs"]
+[ext_resource type="AudioStream" uid="uid://vpke6tjpxili" path="res://Audio/loops block/block full/loop 3.wav" id="3_gfffn"]
+[ext_resource type="AudioStream" uid="uid://ctc72666gmxj" path="res://Audio/loops block/block full/loop 4.wav" id="4_eoj52"]
+[ext_resource type="AudioStream" uid="uid://7fb2krrvui8e" path="res://Audio/loops block/boumboum.wav" id="5_te4ep"]
+
+[resource]
+clip_count = 9
+clip_0/name = &"Loop 1"
+clip_0/stream = ExtResource("1_usqb6")
+clip_0/auto_advance = 1
+clip_0/next_clip = 1
+clip_1/name = &"Loop 1"
+clip_1/stream = ExtResource("1_usqb6")
+clip_1/auto_advance = 1
+clip_1/next_clip = 2
+clip_2/name = &"Loop 2"
+clip_2/stream = ExtResource("2_ot8rs")
+clip_2/auto_advance = 1
+clip_2/next_clip = 3
+clip_3/name = &"Loop 2"
+clip_3/stream = ExtResource("2_ot8rs")
+clip_3/auto_advance = 1
+clip_3/next_clip = 4
+clip_4/name = &"Loop 3"
+clip_4/stream = ExtResource("3_gfffn")
+clip_4/auto_advance = 1
+clip_4/next_clip = 5
+clip_5/name = &"Loop 3"
+clip_5/stream = ExtResource("3_gfffn")
+clip_5/auto_advance = 1
+clip_5/next_clip = 6
+clip_6/name = &"Loop 4"
+clip_6/stream = ExtResource("4_eoj52")
+clip_6/auto_advance = 1
+clip_6/next_clip = 7
+clip_7/name = &"Loop 4"
+clip_7/stream = ExtResource("4_eoj52")
+clip_7/auto_advance = 1
+clip_7/next_clip = 8
+clip_8/name = &"Boumboum"
+clip_8/stream = ExtResource("5_te4ep")
+clip_8/auto_advance = 1
+clip_8/next_clip = 0

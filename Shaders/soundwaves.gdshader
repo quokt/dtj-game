@@ -35,7 +35,7 @@ void fragment() {
 
 	vec2 chaos_v = vec2(chaos, -chaos) * SCREEN_PIXEL_SIZE;
 
-	float dist = length((UV - vec2(0.5)) * 2.);
+	float dist = length((UV - vec2(0.5)) * 4.);
 	float att = clamp(dist / radius, 0., 1.);
 
 	chaos_v *= 1. - pow(att, attenuation);

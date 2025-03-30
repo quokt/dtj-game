@@ -3,7 +3,7 @@ extends Node
 var score : float = 0.0
 var global_chaos : float
 
-var max_global_chaos : float = 30.0
+var max_global_chaos : float = 26.56
 var win_score : float = 1000000.0
 
 var enemy_scene := preload("res://Scenes/enemy.tscn")
@@ -55,10 +55,13 @@ func _process(delta: float) -> void:
 
 
 func _on_wave_timer_timeout() -> void:
+	var wave : EnemyWave
 	if _enemy_waves.is_empty():
-		%WaveTimer.stop()
-		return
-	var wave : EnemyWave = _enemy_waves.pop_front()
+		wave = EnemyWave.new()
+		wave.cooldown_time = 1.0
+		wave.enemy_amount=1
+	else:
+		wave = _enemy_waves.pop_front()
 	spawn_enemies_from_wave(wave)
 	enemy_wave.emit(wave)
 	%WaveTimer.start(wave.cooldown_time)

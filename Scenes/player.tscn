@@ -83,5 +83,3 @@ collision_mask = 2
 position = Vector2(-2, 3)
 shape = SubResource("CircleShape2D_47qeo")
 debug_color = Color(0.353788, 0.618771, 1.92523e-07, 0.42)
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

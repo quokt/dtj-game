@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://i7ttkcmfj2o4"]
 
-[ext_resource type="Script" uid="uid://cfibia4nvnvg0" path="res://Scripts/table.gd" id="1_75djh"]
+[ext_resource type="Script" path="res://Scripts/table.gd" id="1_75djh"]
 [ext_resource type="Texture2D" uid="uid://fb4nmscnwkam" path="res://Assets/Desk.png" id="2_4ppvu"]
 
 [node name="Table" type="Node2D"]
@@ -10,3 +10,8 @@ script = ExtResource("1_75djh")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 texture = ExtResource("2_4ppvu")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-25, 5, 25, 5, 30, 15, 30, 0, 25, -10, -20, -10, -28.6632, 6.07935, -28.872, 15.8236, -25.8792, 16.1716)

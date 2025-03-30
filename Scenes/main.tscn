@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=35 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -148,6 +148,14 @@ clip_8/stream = ExtResource("6_jkdf5")
 clip_8/auto_advance = 1
 clip_8/next_clip = 8
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1vpx"]
+resource_local_to_scene = true
+size = Vector2(4.82039, 153.765)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afrch"]
+resource_local_to_scene = true
+size = Vector2(76.9873, 15.3284)
+
 [node name="Main" type="Node"]
 script = ExtResource("1_itoj1")
 enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx"), SubResource("Resource_jkdf5"), SubResource("Resource_wsu2k"), SubResource("Resource_k12tt"), SubResource("Resource_h1bgf"), SubResource("Resource_b3802"), SubResource("Resource_fevyy"), SubResource("Resource_hibaj"), SubResource("Resource_pdsj5"), SubResource("Resource_ee4r6"), SubResource("Resource_gt3je"), SubResource("Resource_3pmx8"), SubResource("Resource_u50mg"), SubResource("Resource_cbgmd")])
@@ -232,6 +240,28 @@ position = Vector2(-14, -481)
 
 [node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
 metadata/_edit_lock_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-347, 0.500031)
+scale = Vector2(10.7875, -8.31789)
+shape = SubResource("RectangleShape2D_f1vpx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(347, -2)
+scale = Vector2(10.7875, -8.31789)
+shape = SubResource("RectangleShape2D_f1vpx")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-15, -697)
+scale = Vector2(10.7875, -8.31789)
+shape = SubResource("RectangleShape2D_afrch")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4.76837e-07, -208)
+scale = Vector2(10.7875, -8.31789)
+shape = SubResource("RectangleShape2D_afrch")
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]

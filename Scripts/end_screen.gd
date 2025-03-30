@@ -2,7 +2,7 @@ extends ColorRect
 
 
 func _ready() -> void:
-	get_tree().paused = true
+	$AudioStreamPlayer.volume_db = -80.0
 	
 	
 func on_gameover() -> void:

@@ -6,7 +6,7 @@ signal touched_speaker()
 
 @export var speed = 2000.0
 @export var attack_speed = 1000.0
-
+ 	
 @export var idle_min_displacement : Vector2
 @export var idle_max_displacement : Vector2
 

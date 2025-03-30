@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cnffu1sr3i7x1"]
+[gd_scene load_steps=14 format=3 uid="uid://dt68whx8ahlqj"]
 
-[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_p7tt6"]
+[ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_vxgnq"]
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="6_e0yb1"]
 [ext_resource type="Texture2D" uid="uid://dy5ktyum65nu7" path="res://Assets/TitleSreen.png" id="7_srkq1"]
 [ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_2pjye"]
@@ -32,7 +32,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(-0.1, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-320, -320), Vector2(-320, -180)]
+"values": [Vector2(-320, 180), Vector2(-320, -180)]
 }
 
 [sub_resource type="Animation" id="Animation_7fwmy"]
@@ -47,7 +47,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.966667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(-320, -180), Vector2(-320, -640)]
+"values": [Vector2(-320, -180), Vector2(-320, 180)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcpyg"]
@@ -100,7 +100,7 @@ offset_top = -180.0
 offset_right = 320.0
 offset_bottom = 181.0
 color = Color(0.223529, 0.00392157, 0.47451, 1)
-script = ExtResource("1_p7tt6")
+script = ExtResource("1_vxgnq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-1, 4)
@@ -114,6 +114,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
 stream = ExtResource("6_e0yb1")
 autoplay = true
 

@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
 [ext_resource type="Script" path="res://Scripts/waves.gd" id="2_2pvco"]
 [ext_resource type="Script" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
-[ext_resource type="PackedScene" uid="uid://cnffu1sr3i7x1" path="res://Scenes/end_screen.tscn" id="3_xekq0"]
+[ext_resource type="PackedScene" uid="uid://dt68whx8ahlqj" path="res://Scenes/end_screen.tscn" id="3_xekq0"]
 [ext_resource type="Shader" path="res://Scenes/titlescreen.gdshader" id="4_cpa0t"]
 [ext_resource type="AudioStream" uid="uid://cj5voopdx8kqm" path="res://Audio/loops block/block full/loop 1.wav" id="4_uy6yx"]
-[ext_resource type="Script" path="res://Scenes/end_screen.gd" id="4_w1mn2"]
+[ext_resource type="Script" path="res://Scripts/end_screen.gd" id="4_w1mn2"]
 [ext_resource type="AudioStream" uid="uid://dqftec3fkm1um" path="res://Audio/loops block/block full/loop 2.wav" id="5_3goxj"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cl36ulcq58gn2" path="res://Scenes/speaker.tscn" id="6_21xkr"]
@@ -178,7 +178,16 @@ limit_right = 320
 [node name="EndScreen" parent="Camera" instance=ExtResource("3_xekq0")]
 unique_name_in_owner = true
 z_index = 2
+offset_top = 180.0
+offset_bottom = 541.0
 script = ExtResource("4_w1mn2")
+
+[node name="ColorRect" type="ColorRect" parent="Camera/EndScreen"]
+material = SubResource("ShaderMaterial_30fnu")
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 361.0
+mouse_filter = 2
 
 [node name="TitleScreen" parent="Camera" instance=ExtResource("14_xdbjb")]
 unique_name_in_owner = true

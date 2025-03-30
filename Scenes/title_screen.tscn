@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cgpqgrajqlso2"]
+[gd_scene load_steps=21 format=3 uid="uid://cgpqgrajqlso2"]
 
 [ext_resource type="Texture2D" uid="uid://c16p7fsjwm4gr" path="res://Assets/titlescreenbackground.png" id="1_c7o0y"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_t6guj"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dy5ktyum65nu7" path="res://Assets/TitleSreen.png" id="7_2bvlb"]
 [ext_resource type="Texture2D" uid="uid://btwdaiq35ba31" path="res://Assets/AnimationButtonGameRules.png" id="7_m1qv4"]
 [ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_1vjgs"]
+[ext_resource type="Texture2D" uid="uid://b287d8vvdohcv" path="res://Assets/BackgroundGameRules.png" id="11_jhu3b"]
 
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
@@ -121,8 +122,8 @@ stream = ExtResource("4_fisst")
 autoplay = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(324, 102)
-scale = Vector2(3.56103, 3.35351)
+position = Vector2(328, 107)
+scale = Vector2(3.61645, 3.458)
 sprite_frames = SubResource("SpriteFrames_t8ndq")
 autoplay = "default"
 
@@ -131,10 +132,10 @@ stream = ExtResource("8_1vjgs")
 
 [node name="PlayButton" type="TextureButton" parent="."]
 layout_mode = 2
-offset_left = 212.0
-offset_top = 201.0
-offset_right = 276.0
-offset_bottom = 233.0
+offset_left = 213.0
+offset_top = 214.0
+offset_right = 277.0
+offset_bottom = 246.0
 scale = Vector2(3.2, 3.2)
 focus_mode = 0
 action_mode = 0
@@ -168,22 +169,23 @@ texture_pressed = ExtResource("2_tjx30")
 texture_hover = ExtResource("3_13vrx")
 stretch_mode = 3
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 visible = false
 z_index = 10
 layout_mode = 0
-offset_left = 21.0
-offset_top = 16.0
-offset_right = 619.0
-offset_bottom = 349.0
+offset_left = 20.0
+offset_top = 8.0
+offset_right = 627.0
+offset_bottom = 350.0
 mouse_filter = 2
+texture = ExtResource("11_jhu3b")
 
 [node name="ExitButton2" type="TextureButton" parent="ColorRect"]
 layout_mode = 2
-offset_left = 16.0
-offset_top = 230.0
-offset_right = 80.0
-offset_bottom = 262.0
+offset_left = 32.0
+offset_top = 212.0
+offset_right = 96.0
+offset_bottom = 244.0
 scale = Vector2(3, 3)
 focus_mode = 0
 texture_normal = ExtResource("2_tjx30")

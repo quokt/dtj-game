@@ -7,9 +7,6 @@ signal touched_speaker()
 @export var speed = 2000.0
 @export var attack_speed = 1000.0
 
-@export var min_damage : float
-@export var max_damage : float
-
 @export var idle_min_displacement : Vector2
 @export var idle_max_displacement : Vector2
 
@@ -78,7 +75,7 @@ func set_color_state(new_color_state : COLOR_STATE) -> void:
 
 func _ready() -> void:
 	get_tree().get_first_node_in_group("gametime").tempo.connect(on_tempo)
-	print(get_tree().get_nodes_in_group("towers"))
+	#print(get_tree().get_nodes_in_group("towers"))
 	attack_target = Vector2(get_tree().get_nodes_in_group("towers")[randi()%get_tree().get_nodes_in_group("towers").size()].position)
 	set_color_state(COLOR_STATE.RED)
 	if not override_target == null:
@@ -97,6 +94,6 @@ func on_tempo():
 	state = STATE.STUN
 	pass
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Tower:
-		body.take_damage(randf_range(min_damage, max_damage))
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+	#if body is Tower:
+		#body.take_damage(randf_range(min_damage, max_damage))

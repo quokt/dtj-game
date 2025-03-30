@@ -5,6 +5,8 @@ extends Node2D
 var offset := 100.0
 var shockwave_scene := preload("res://Scenes/shockwave.tscn")
 
+@onready var main = get_tree().get_first_node_in_group("main")
+
 @export var wave_speed : float
 @export var wave_accel : float
 @export var wave_thickness : float 
@@ -22,10 +24,11 @@ class Wave:
 
 func _draw() -> void:
 	for tower in %Towers.get_children():
-		if tower.active:
-			tower.alpha = min(1.0, tower.alpha + get_physics_process_delta_time())
-		else:
-			tower.alpha = max(0.0, tower.alpha - get_physics_process_delta_time())
+		#if tower.active:
+			#tower.alpha = min(1.0, tower.alpha + get_physics_process_ddzelta_time())
+		#else:
+			#tower.alpha = max(0.0, tower.alpha - get_physics_process_delta_time())
+		tower.alpha = remap(main.score,0.0,main.win_score,0.0,1.0)
 		var color : Color = color_speaker
 		if tower == %Table : color = color_table
 		for wave in waves_array:

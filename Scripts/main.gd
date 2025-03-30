@@ -2,7 +2,7 @@ extends Node
 
 var score : float = 0.0
 
-var win_score : float = 10.0
+var win_score : float = 100.0
 
 var enemy_scene := preload("res://Scenes/enemy.tscn")
 

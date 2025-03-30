@@ -186,6 +186,7 @@ grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="Camera/TitleScreen"]
 material = SubResource("ShaderMaterial_30fnu")
+layout_mode = 0
 offset_right = 640.0
 offset_bottom = 361.0
 mouse_filter = 2
@@ -240,19 +241,12 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 position = Vector2(-10, -519)
 scale = Vector2(2.5, 2.5)
-amount_max = null
-amount_min = null
-max_chaos = null
 
 [node name="Speaker" parent="Visible/Towers" groups=["towers"] instance=ExtResource("6_21xkr")]
 position = Vector2(-239, -529)
-amount_max = null
-amount_min = null
 
 [node name="Speaker2" parent="Visible/Towers" groups=["towers"] instance=ExtResource("6_21xkr")]
 position = Vector2(227, -532)
-amount_max = null
-amount_min = null
 
 [node name="Player" parent="Visible" instance=ExtResource("12_wc03o")]
 unique_name_in_owner = true

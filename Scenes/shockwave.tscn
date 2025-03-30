@@ -5,11 +5,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gsqe0"]
 shader = ExtResource("1_rm0x0")
-shader_parameter/strength = 0.047
+shader_parameter/strength = 0.058
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 0.16
-shader_parameter/aberration = 0.942
-shader_parameter/width = 0.0385
+shader_parameter/aberration = 0.897
+shader_parameter/width = 0.0284
 shader_parameter/feather = 0.333
 
 [node name="shockwave" type="Area2D"]

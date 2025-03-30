@@ -1,0 +1,17 @@
+[gd_resource type="AnimatedTexture" load_steps=5 format=3 uid="uid://bcdvuqlqdcye2"]
+
+[ext_resource type="Texture2D" uid="uid://bhkagqyg6lkr4" path="res://Assets/Frame1animatedbutton_0002.png" id="1_w5wf0"]
+[ext_resource type="Texture2D" uid="uid://cm71x05bfwoq7" path="res://Assets/Frame2animatedbutton_0002.png" id="2_m1yqg"]
+[ext_resource type="Texture2D" uid="uid://xkwemcpwn37g" path="res://Assets/Frame3animatedbutton_0002.png" id="3_74psk"]
+[ext_resource type="Texture2D" uid="uid://f22uxfpokc2k" path="res://Assets/Frame4animatedbutton_0002.png" id="4_fditd"]
+
+[resource]
+frames = 4
+frame_0/texture = ExtResource("1_w5wf0")
+frame_0/duration = 0.25
+frame_1/texture = ExtResource("2_m1yqg")
+frame_1/duration = 0.25
+frame_2/texture = ExtResource("3_74psk")
+frame_2/duration = 0.25
+frame_3/texture = ExtResource("4_fditd")
+frame_3/duration = 0.25

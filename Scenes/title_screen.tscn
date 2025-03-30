@@ -1,10 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgpqgrajqlso2"]
+[gd_scene load_steps=17 format=3 uid="uid://cgpqgrajqlso2"]
 
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_t6guj"]
 [ext_resource type="Texture2D" uid="uid://cleyewoal07ln" path="res://Assets/play_button.png" id="1_y7qto"]
 [ext_resource type="Texture2D" uid="uid://g5qfogp6uccb" path="res://Assets/exit_button.png" id="2_tjx30"]
+[ext_resource type="Texture2D" uid="uid://bcdvuqlqdcye2" path="res://Assets/exit_button.tres" id="3_13vrx"]
 [ext_resource type="Texture2D" uid="uid://loy3uyei8q1l" path="res://Assets/play_button.tres" id="3_b73nm"]
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="4_fisst"]
+[ext_resource type="Texture2D" uid="uid://dy5ktyum65nu7" path="res://Assets/TitleSreen.png" id="7_2bvlb"]
 
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
@@ -58,6 +60,42 @@ _data = {
 "vanish": SubResource("Animation_7fwmy")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l81ps"]
+atlas = ExtResource("7_2bvlb")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_166cj"]
+atlas = ExtResource("7_2bvlb")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_347wd"]
+atlas = ExtResource("7_2bvlb")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vl6j"]
+atlas = ExtResource("7_2bvlb")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8ndq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l81ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_166cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_347wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vl6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="TitleScreen" type="ColorRect"]
 process_mode = 3
 offset_left = -320.0
@@ -69,10 +107,10 @@ script = ExtResource("1_t6guj")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 220.0
-offset_top = 146.0
-offset_right = 284.0
-offset_bottom = 210.0
+offset_left = 219.0
+offset_top = 168.0
+offset_right = 283.0
+offset_bottom = 232.0
 scale = Vector2(3, 3)
 theme_override_constants/separation = 0
 metadata/_edit_group_ = true
@@ -87,16 +125,18 @@ texture_hover = ExtResource("3_b73nm")
 [node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("2_tjx30")
+texture_pressed = ExtResource("2_tjx30")
+texture_hover = ExtResource("3_13vrx")
 stretch_mode = 3
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, -18)
+position = Vector2(-1, 4)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(246, 176, 243, 237, 385, 251, 390, 169)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(0, -18)
+position = Vector2(-1, 4)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D2"]
 polygon = PackedVector2Array(247, 281, 245, 333, 384, 333, 386, 287)
@@ -109,6 +149,12 @@ libraries = {
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_fisst")
 autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(322, 88)
+scale = Vector2(2.93164, 2.85156)
+sprite_frames = SubResource("SpriteFrames_t8ndq")
+autoplay = "default"
 
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

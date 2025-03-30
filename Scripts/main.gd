@@ -3,7 +3,7 @@ extends Node
 var score : float = 0.0
 var global_chaos : float
 
-var max_global_chaos : float = 26.56
+var max_global_chaos : float = 22.22
 var win_score : float = 1000000.0
 
 var enemy_scene := preload("res://Scenes/enemy.tscn")
@@ -24,7 +24,8 @@ func reset() -> void:
 	for tower in %Towers.get_children():
 		if tower.has_node("AnimatedSprite2D/ColorRect"):
 			tower.get_node("AnimatedSprite2D/ColorRect").material.set_shader_parameter("chaos", 0.0)
-	
+			tower.chaos = 0.0
+	game_on = true
 	
 
 
@@ -45,11 +46,13 @@ func _ready() -> void:
 	_on_wave_timer_timeout()
 	get_window().mode = Window.MODE_WINDOWED
 
+var game_on : bool = true
 func _process(delta: float) -> void:
 	%Label.text = str(score, global_chaos)
 	%ScoreLabel.text = str(int(score))
-	if global_chaos >= max_global_chaos:
+	if global_chaos >= max_global_chaos and game_on:
 		%EndScreen.on_gameover()
+		game_on = false
 		
 		
 

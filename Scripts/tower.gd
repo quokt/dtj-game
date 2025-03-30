@@ -3,8 +3,8 @@ class_name Tower
 
 signal died
 
-@export var amount_max : int = 200
-@export var amount_min : int = 1
+var amount_max : int = 200
+var amount_min : int = 2
 
 var alpha : float = 0.0
 var active : bool = false
@@ -20,7 +20,7 @@ func _ready() -> void:
 	
 
 func _physics_process(delta: float) -> void:
-	$GPUParticles2D.amount = remap(main.score, 0.0, main.win_score, amount_min, amount_max)
+	$GPUParticles2D.amount = remap(main.score, 0.0, 1000.0, amount_min, amount_max)
 
 func take_damage(amount : float) -> void:
 	chaos += amount*2.0

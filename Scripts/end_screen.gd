@@ -2,20 +2,21 @@ extends TextureRect
 
 
 func _ready() -> void:
-	$AudioStreamPlayer.play()
-	$AudioStreamPlayer.playing = true
+	#$AudioStreamPlayer.play()
+	#$AudioStreamPlayer.playing = true
 	$AudioStreamPlayer.volume_db = -80.0
 	
-	
+var final_score : int
 func on_gameover() -> void:
+	final_score = int(get_tree().get_first_node_in_group("main").score)
 	$AudioStreamPlayer.play()
 	%ScoreLabel.get_parent().visible = false
-	$TextureRect/ScoreLabel.text = str(int(get_tree().get_first_node_in_group("main").score))
-	get_tree().paused = true
-	$AudioStreamPlayer.volume_db = 0
-	%MainAudioStreamPlayer.volume_db = -80.0
+	$TextureRect/ScoreLabel.text = str(final_score)
+	#get_tree().paused = true
+	#$AudioStreamPlayer.volume_db = 0
+	#%MainAudioStreamPlayer.volume_db = -80.0
 	$AnimationPlayer.play("appear")
-	await($AnimationPlayer.animation_finished)
+	#await($AnimationPlayer.animation_finished)
 	$AudioStreamPlayer.volume_db = 0
 	%MainAudioStreamPlayer.volume_db = -80.0
 
@@ -39,6 +40,7 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	$AudioStreamPlayer.volume_db = -80.0
 	$AnimationPlayer.play("vanish")
 	%TitleScreen.on_pause()
 	await(get_tree().create_timer(1.0).timeout)

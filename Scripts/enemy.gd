@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 				elapsed = 0.0
 				wait_time = randf_range(0.5,3.0)
 		STATE.ATTACK:
-			velocity = (attack_target - position).normalized() * speed * delta
+			velocity = (attack_target - position).normalized() * attack_speed * delta
 	move_and_slide()
 
 func set_color_state(new_color_state : COLOR_STATE) -> void:

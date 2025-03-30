@@ -7,12 +7,16 @@ func _ready() -> void:
 	
 func on_pause() -> void:
 	get_tree().paused = true
-	visible = true
+	$AnimationPlayer.play("appear")
+	await($AnimationPlayer.animation_finished)
 
 
 func _on_play_button_pressed() -> void:
+	$AnimationPlayer.play("vanish")
+	await($AnimationPlayer.animation_finished)
 	get_tree().paused = false
-	visible = false
+
+
 
 
 func _on_exit_button_pressed() -> void:

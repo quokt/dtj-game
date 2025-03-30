@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w7ulucflbkb5"
-path="res://.godot/imported/AnimationButtonGameRules.png-312f3ece28e369c7eb2130e0a85feff5.ctex"
+uid="uid://bcygwys3hm7ep"
+path="res://.godot/imported/titlescreenbackground.png-8b42fcd96ad0d243b394fe410a80c605.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/AnimationButtonGameRules.png"
-dest_files=["res://.godot/imported/AnimationButtonGameRules.png-312f3ece28e369c7eb2130e0a85feff5.ctex"]
+source_file="res://Assets/titlescreenbackground.png"
+dest_files=["res://.godot/imported/titlescreenbackground.png-8b42fcd96ad0d243b394fe410a80c605.ctex"]
 
 [params]
 

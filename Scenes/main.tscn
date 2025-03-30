@@ -265,6 +265,7 @@ position = Vector2(227, -532)
 [node name="Player" parent="Visible" instance=ExtResource("12_wc03o")]
 unique_name_in_owner = true
 position = Vector2(-14, -481)
+walk_speed = 50.0
 
 [node name="Label" type="Label" parent="Visible/Player"]
 unique_name_in_owner = true

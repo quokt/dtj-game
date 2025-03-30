@@ -228,7 +228,6 @@ position = Vector2(227, -532)
 unique_name_in_owner = true
 position = Vector2(-14, -481)
 
-<<<<<<< HEAD
 [node name="Camera" type="Camera2D" parent="Visible/Player"]
 unique_name_in_owner = true
 position = Vector2(14, 30)
@@ -237,8 +236,6 @@ limit_top = -620
 limit_right = 320
 limit_bottom = -150
 
-=======
->>>>>>> 65d8ce1 (added pause)
 [node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
 metadata/_edit_lock_ = true
 

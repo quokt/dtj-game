@@ -331,6 +331,7 @@ vertical_alignment = 1
 metadata/_edit_lock_ = true
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
+[connection signal="tempo" from="GameTime" to="Visible/Player" method="_on_game_time_tempo"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]
 [connection signal="clicked" from="Visible/Towers/Table" to="." method="_on_speaker_clicked"]
 [connection signal="clicked" from="Visible/Towers/Speaker" to="." method="_on_speaker_clicked"]

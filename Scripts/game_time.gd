@@ -21,3 +21,4 @@ func on_beat_timer_timeout() -> void:
 	beat.emit()
 	if beat_count%16 == 0:
 		tempo.emit()
+		

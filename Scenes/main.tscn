@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=33 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://ctc72666gmxj" path="res://Audio/loops block/block full/loop 4.wav" id="7_jmu3w"]
 [ext_resource type="PackedScene" uid="uid://bo5lpml26n7yf" path="res://Scenes/mouse.tscn" id="12_4ay51"]
 [ext_resource type="PackedScene" uid="uid://ptixcxeaekgw" path="res://Scenes/player.tscn" id="12_wc03o"]
+[ext_resource type="PackedScene" uid="uid://cgpqgrajqlso2" path="res://Scenes/title_screen.tscn" id="14_xdbjb"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
@@ -151,6 +152,25 @@ clip_8/next_clip = 8
 script = ExtResource("1_itoj1")
 enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx"), SubResource("Resource_jkdf5"), SubResource("Resource_wsu2k"), SubResource("Resource_k12tt"), SubResource("Resource_h1bgf"), SubResource("Resource_b3802"), SubResource("Resource_fevyy"), SubResource("Resource_hibaj"), SubResource("Resource_pdsj5"), SubResource("Resource_ee4r6"), SubResource("Resource_gt3je"), SubResource("Resource_3pmx8"), SubResource("Resource_u50mg"), SubResource("Resource_cbgmd")])
 
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -451)
+
+[node name="TitleScreen" parent="Camera" instance=ExtResource("14_xdbjb")]
+unique_name_in_owner = true
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.5
+offset_right = 320.0
+offset_bottom = 180.5
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="GameTime" type="Node" parent="."]
 script = ExtResource("1_ow3qn")
 
@@ -208,6 +228,7 @@ position = Vector2(227, -532)
 unique_name_in_owner = true
 position = Vector2(-14, -481)
 
+<<<<<<< HEAD
 [node name="Camera" type="Camera2D" parent="Visible/Player"]
 unique_name_in_owner = true
 position = Vector2(14, 30)
@@ -216,6 +237,8 @@ limit_top = -620
 limit_right = 320
 limit_bottom = -150
 
+=======
+>>>>>>> 65d8ce1 (added pause)
 [node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
 metadata/_edit_lock_ = true
 

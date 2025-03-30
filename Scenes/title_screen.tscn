@@ -1,15 +1,35 @@
-[gd_scene format=3 uid="uid://cgpqgrajqlso2"]
+[gd_scene load_steps=4 format=3 uid="uid://cgpqgrajqlso2"]
 
-[node name="TitleScreen" type="Node"]
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_t6guj"]
+[ext_resource type="Texture2D" uid="uid://cleyewoal07ln" path="res://Assets/play_button.png" id="1_y7qto"]
+[ext_resource type="Texture2D" uid="uid://g5qfogp6uccb" path="res://Assets/exit_button.png" id="2_tjx30"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="TitleScreen" type="ColorRect"]
+process_mode = 3
 offset_right = 640.0
 offset_bottom = 361.0
 color = Color(0.223529, 0.00392157, 0.47451, 1)
+script = ExtResource("1_t6guj")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 196.0
-offset_top = 208.0
-offset_right = 444.0
-offset_bottom = 306.0
+offset_left = 220.0
+offset_top = 164.0
+offset_right = 284.0
+offset_bottom = 228.0
+scale = Vector2(3, 3)
+theme_override_constants/separation = 0
+metadata/_edit_group_ = true
+
+[node name="PlayButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+action_mode = 0
+texture_normal = ExtResource("1_y7qto")
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_tjx30")
+stretch_mode = 3
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

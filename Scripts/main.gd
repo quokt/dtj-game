@@ -9,6 +9,8 @@ signal enemy_wave(enemy_wave : EnemyWave)
 var fullscreen_on : bool = false
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey:
+		if event.is_action_pressed("pause"):
+			%TitleScreen.on_pause()
 		if event.is_action_pressed("fullscreen"):
 			if not fullscreen_on:
 				get_window().mode = Window.MODE_FULLSCREEN

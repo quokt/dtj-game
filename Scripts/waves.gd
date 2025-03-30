@@ -64,7 +64,7 @@ func _on_beat() -> void:
 	waves_array.append(new_wave)
 	
 	# create shockwave
-	if beat_count%8 == 0:
+	if beat_count%16 == 0:
 		for tower in %Towers.get_children():
 			if tower.active:
 				var new_shockwave = shockwave_scene.instantiate()

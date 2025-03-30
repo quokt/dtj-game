@@ -9,6 +9,8 @@ extends CharacterBody2D
 @export var idle_min_displacement : Vector2
 @export var idle_max_displacement : Vector2
 
+@export var override_target : Node2D = null
+
 enum COLOR_STATE {BLUE, RED}
 var color_state = COLOR_STATE.BLUE
 
@@ -56,6 +58,10 @@ func _ready() -> void:
 	print(get_tree().get_nodes_in_group("towers"))
 	attack_target = Vector2(get_tree().get_nodes_in_group("towers")[randi()%get_tree().get_nodes_in_group("towers").size()].position)
 	set_color_state(COLOR_STATE.BLUE)
+	if override_target:
+		base_target = Vector2(override_target.position.x + randf_range(10.0,60.0), override_target.position.y + randf_range(10.0,40.0))
+		dance_target = Vector2(override_target.position.x + randf_range(10.0,60.0), override_target.position.y + randf_range(10.0,40.0))
+		attack_target = Vector2(override_target.position.x + randf_range(10.0,60.0), override_target.position.y + randf_range(10.0,40.0))
 
 
 func on_player_touched() -> void:

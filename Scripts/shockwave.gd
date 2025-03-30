@@ -6,8 +6,8 @@ var elapsed : float = 0.0
 func _ready() -> void:
 	pass # Replace with function body.
 
-func set_shader_position( x: float, y: float):	
-	$shockwave_shader.material.set_shader_parameter("center", Vector2(x,y))
+func set_shader_position( pos: Vector2):	
+	$shockwave_shader.material.set_shader_parameter("center", pos)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

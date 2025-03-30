@@ -212,6 +212,9 @@ position = Vector2(-14, -481)
 [node name="Camera" type="Camera2D" parent="Visible/Player"]
 unique_name_in_owner = true
 position = Vector2(14, 30)
+limit_left = -320
+limit_right = 320
+limit_bottom = -200
 
 [node name="TitleScreen" parent="Visible/Player/Camera" instance=ExtResource("14_xdbjb")]
 unique_name_in_owner = true

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bcdvuqlqdcye2" path="res://Assets/exit_button.tres" id="5_qu28c"]
 [ext_resource type="Texture2D" uid="uid://jcsxlcq1s12w" path="res://Assets/Frame2GameOverScreen.png" id="5_vggsb"]
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="6_e0yb1"]
-[ext_resource type="Texture2D" uid="uid://dgtoao7p2n51c" path="res://Assets/ScoreBar.png" id="7_jnxup"]
+[ext_resource type="Texture2D" uid="uid://dlfdyecooe5px" path="res://Assets/ScoreBar.png" id="7_jnxup"]
 [ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_2pjye"]
 [ext_resource type="FontFile" uid="uid://bnlakaxtphcxj" path="res://Assets/PoliceRuleScreen/upheavtt.ttf" id="8_o1q4i"]
 

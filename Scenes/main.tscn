@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bo5lpml26n7yf" path="res://Scenes/mouse.tscn" id="12_4ay51"]
 [ext_resource type="PackedScene" uid="uid://ptixcxeaekgw" path="res://Scenes/player.tscn" id="12_wc03o"]
 [ext_resource type="PackedScene" uid="uid://cgpqgrajqlso2" path="res://Scenes/title_screen.tscn" id="14_xdbjb"]
-[ext_resource type="Texture2D" uid="uid://dgtoao7p2n51c" path="res://Assets/ScoreBar.png" id="18_aoxg5"]
+[ext_resource type="Texture2D" uid="uid://dlfdyecooe5px" path="res://Assets/ScoreBar.png" id="18_aoxg5"]
 [ext_resource type="FontFile" uid="uid://bnlakaxtphcxj" path="res://Assets/PoliceRuleScreen/upheavtt.ttf" id="18_m0bx7"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]

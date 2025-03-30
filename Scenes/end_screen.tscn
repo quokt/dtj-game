@@ -11,14 +11,14 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-320, 180)]
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_nb767"]
@@ -26,14 +26,14 @@ resource_name = "appear"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.1, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-320, 180), Vector2(-320, -180)]
+"times": PackedFloat32Array(0.0333333, 0.2, 0.366667, 0.533333, 0.733333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_7fwmy"]
@@ -41,14 +41,14 @@ resource_name = "vanish"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 2
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-320, -180), Vector2(-320, 180)]
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xcpyg"]
@@ -60,10 +60,12 @@ _data = {
 
 [node name="TitleScreen2" type="TextureRect"]
 process_mode = 3
+visible = false
 offset_left = -320.0
-offset_top = 180.0
+offset_top = -180.0
 offset_right = 320.0
-offset_bottom = 541.0
+offset_bottom = 181.0
+mouse_filter = 2
 script = ExtResource("1_vxgnq")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -87,17 +89,19 @@ stream = ExtResource("8_2pjye")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 5.0
-offset_right = 502.0
-offset_bottom = 308.0
+offset_left = 179.0
+offset_top = 18.0
+offset_right = 478.0
+offset_bottom = 287.0
 texture = ExtResource("4_l4aqn")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 221.0
-offset_top = 290.0
-offset_right = 285.0
-offset_bottom = 330.0
+offset_left = 224.0
+offset_top = 267.0
+offset_right = 288.0
+offset_bottom = 307.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("5_qu28c")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

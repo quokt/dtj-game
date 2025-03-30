@@ -104,6 +104,7 @@ libraries = {
 }
 
 [node name="Blobs1" type="Node2D" parent="."]
+visible = false
 position = Vector2(117, 262)
 
 [node name="Enemy" parent="Blobs1" node_paths=PackedStringArray("override_target") instance=ExtResource("4_a13y7")]
@@ -155,6 +156,7 @@ position = Vector2(-67, 41)
 override_target = NodePath("..")
 
 [node name="Blobs2" type="Node2D" parent="."]
+visible = false
 position = Vector2(529, 260)
 
 [node name="Enemy" parent="Blobs2" node_paths=PackedStringArray("override_target") instance=ExtResource("4_a13y7")]

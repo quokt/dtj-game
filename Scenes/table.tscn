@@ -1,43 +1,45 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-[gd_scene load_steps=4 format=3 uid="uid://i7ttkcmfj2o4"]
-=======
-[gd_scene load_steps=6 format=3 uid="uid://i7ttkcmfj2o4"]
->>>>>>> 28c6f7f (animated sound)
-=======
-[gd_scene load_steps=5 format=3 uid="uid://i7ttkcmfj2o4"]
->>>>>>> 23964f6 (title screen blobs)
+[gd_scene load_steps=8 format=3 uid="uid://i7ttkcmfj2o4"]
 
 [ext_resource type="Script" path="res://Scripts/table.gd" id="1_75djh"]
 [ext_resource type="Texture2D" uid="uid://fb4nmscnwkam" path="res://Assets/Desk.png" id="2_4ppvu"]
 [ext_resource type="Texture2D" uid="uid://c1ifwvwo3iyl8" path="res://Assets/cans.png" id="3_dpxsl"]
 
-<<<<<<< HEAD
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0jla"]
-size = Vector2(58.6594, 20)
-=======
-[sub_resource type="AtlasTexture" id="AtlasTexture_wfte0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiljo"]
 atlas = ExtResource("2_4ppvu")
 region = Rect2(0, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tjd7c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xki5r"]
 atlas = ExtResource("2_4ppvu")
 region = Rect2(64, 0, 64, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6athv"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_h8gd2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wfte0")
+"texture": SubResource("AtlasTexture_qiljo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tjd7c")
+"texture": SubResource("AtlasTexture_xki5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiljo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiljo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiljo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiljo")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
->>>>>>> 28c6f7f (animated sound)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0jla"]
+size = Vector2(58.6594, 20)
 
 [node name="Table" type="Node2D"]
 scale = Vector2(0.2, 0.2)
@@ -45,9 +47,8 @@ script = ExtResource("1_75djh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1, 1)
-sprite_frames = SubResource("SpriteFrames_6athv")
+sprite_frames = SubResource("SpriteFrames_h8gd2")
 autoplay = "default"
-frame_progress = 0.650465
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

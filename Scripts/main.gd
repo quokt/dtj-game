@@ -6,11 +6,20 @@ var enemy_scene := preload("res://Scenes/enemy.tscn")
 
 signal enemy_wave(enemy_wave : EnemyWave)
 
+var fullscreen_on : bool = false
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey:
+		if event.is_action_pressed("fullscreen"):
+			if not fullscreen_on:
+				get_window().mode = Window.MODE_FULLSCREEN
+			else:
+				get_window().mode = Window.MODE_WINDOWED
+			fullscreen_on = not fullscreen_on
 
 func _ready() -> void:
 	%Player.enemy_touched.connect(on_player_touched_enemy)
 	_on_wave_timer_timeout()
-
+	get_window().mode = Window.MODE_WINDOWED
 
 func _on_wave_timer_timeout() -> void:
 	if enemy_waves.is_empty():

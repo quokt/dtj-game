@@ -193,15 +193,15 @@ unique_name_in_owner = true
 [node name="Towers" type="Node2D" parent="Visible"]
 unique_name_in_owner = true
 
-[node name="Table" parent="Visible/Towers" instance=ExtResource("5_kry3j")]
+[node name="Table" parent="Visible/Towers" groups=["towers"] instance=ExtResource("5_kry3j")]
 unique_name_in_owner = true
 position = Vector2(-10, -519)
 scale = Vector2(2.5, 2.5)
 
-[node name="Speaker" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
+[node name="Speaker" parent="Visible/Towers" groups=["towers"] instance=ExtResource("6_21xkr")]
 position = Vector2(-239, -529)
 
-[node name="Speaker2" parent="Visible/Towers" instance=ExtResource("6_21xkr")]
+[node name="Speaker2" parent="Visible/Towers" groups=["towers"] instance=ExtResource("6_21xkr")]
 position = Vector2(227, -532)
 
 [node name="Player" parent="Visible" instance=ExtResource("12_wc03o")]

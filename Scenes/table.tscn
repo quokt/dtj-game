@@ -45,7 +45,6 @@ scale = Vector2(0.2, 0.2)
 script = ExtResource("1_75djh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_h8gd2")
 autoplay = "default"
 
@@ -56,12 +55,11 @@ visible = false
 polygon = PackedVector2Array(-25, 5, 25, 5, 30, 15, 30, 0, 25, -10, -20, -10, -28.6632, 6.07935, -28.872, 15.8236, -25.8792, 16.1716)
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 4
+collision_layer = 12
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.17888, 0)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k0jla")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cxfx6bw53bvmn"]
+[gd_scene load_steps=21 format=3 uid="uid://cxfx6bw53bvmn"]
 
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_y4ntl"]
 [ext_resource type="Texture2D" uid="uid://cn7ctc2sfsuwt" path="res://Assets/Blob1Animation.png" id="2_1bjh7"]
@@ -110,6 +110,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lw0ex"]
+radius = 15.0333
+
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_y4ntl")
@@ -138,3 +141,13 @@ scale = Vector2(1.1, 1.1)
 sprite_frames = SubResource("SpriteFrames_j7yh4")
 autoplay = "default"
 frame_progress = 0.708644
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 1)
+shape = SubResource("CircleShape2D_lw0ex")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

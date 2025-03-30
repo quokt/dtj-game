@@ -16,6 +16,10 @@ func take_damage(amount : int) -> void:
 	if health <= 0:
 		die()
 		
+	var _material = $AnimatedSprite2D/ColorRect.material
+	_material.set_shader_parameter("chaos", _material.get_shader_parameter("chaos") + float(amount))
+
+		
 func die() -> void:
 	died.emit()
 	queue_free()

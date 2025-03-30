@@ -4,11 +4,14 @@ signal clicked(ref: Tower)
 
 var mouse_inside : bool = false
 
+
+
 var attack_counter : int = 0
 
 
 var elapsed : float = 0.0
 func _process(delta: float) -> void:
+	
 	if attack_counter > 0:
 		pass
 	for i in range(attack_counter):

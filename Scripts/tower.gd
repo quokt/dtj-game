@@ -3,14 +3,24 @@ class_name Tower
 
 signal died
 
+@export var amount_max : int = 200
+@export var amount_min : int = 0
+
 var alpha : float = 0.0
 var active : bool = false
+
+@onready var main = get_tree().get_first_node_in_group("main")
+
 
 @export var max_chaos : float
 var chaos : float = 0.0
 
 func _ready() -> void:
 	add_to_group("towers")
+	
+
+func _physics_process(delta: float) -> void:
+	$GPUParticles2D.amount = remap(main.score, 0.0, main.win_score, amount_min, amount_max)
 
 func take_damage(amount : float) -> void:
 	chaos += amount*2.0

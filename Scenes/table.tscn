@@ -82,6 +82,7 @@ shape = SubResource("RectangleShape2D_k0jla")
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 z_index = -1
 position = Vector2(15, -10)
+amount = 1
 process_material = SubResource("ParticleProcessMaterial_8oaa5")
 texture = ExtResource("3_iq6hi")
 

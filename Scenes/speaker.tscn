@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://cl36ulcq58gn2"]
+[gd_scene load_steps=14 format=3 uid="uid://cl36ulcq58gn2"]
 
 [ext_resource type="Script" path="res://Scripts/speaker.gd" id="1_rg5dd"]
 [ext_resource type="Texture2D" uid="uid://bxqfdg77uf8hk" path="res://Assets/Speaker2.2-anim.png" id="2_ny6sn"]
 [ext_resource type="AudioStream" uid="uid://gel31u1jf4lu" path="res://Audio/blob sounds/fx/damage speaker.wav" id="3_flmfu"]
+[ext_resource type="Texture2D" uid="uid://b4x6ojy7c3w8" path="res://Assets/eclair.png" id="4_vtlno"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_marxr"]
 atlas = ExtResource("2_ny6sn")
@@ -99,6 +100,22 @@ size = Vector2(108, 142)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hxo41"]
 size = Vector2(117, 150)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4kwxv"]
+lifetime_randomness = 0.97
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 283.6
+direction = Vector3(0, -10, 0)
+spread = 0.0
+flatness = 0.452
+angular_velocity_min = -113.32
+angular_velocity_max = -113.32
+radial_velocity_min = -30.3
+radial_velocity_max = 121.21
+gravity = Vector3(0, -100, 0)
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = 15.15
+
 [node name="Speaker" type="Node2D"]
 script = ExtResource("1_rg5dd")
 max_chaos = 100.0
@@ -144,6 +161,12 @@ debug_color = Color(0.979921, 0, 0.384029, 0.42)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_flmfu")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 1)
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_4kwxv")
+texture = ExtResource("4_vtlno")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

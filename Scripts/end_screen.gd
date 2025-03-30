@@ -9,6 +9,7 @@ func on_gameover() -> void:
 	get_tree().paused = true
 	$AudioStreamPlayer.volume_db = 0
 	%MainAudioStreamPlayer.volume_db = -80.0
+	await(get_tree().create_timer(5).timeout)
 
 	$AnimationPlayer.play("appear")
 	await($AnimationPlayer.animation_finished)

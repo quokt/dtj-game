@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dt68whx8ahlqj"]
+[gd_scene load_steps=14 format=3 uid="uid://cnffu1sr3i7x1"]
 
 [ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_vxgnq"]
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="6_e0yb1"]
@@ -17,7 +17,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-320, -180)]
+"values": [Vector2(-320, 180)]
 }
 
 [sub_resource type="Animation" id="Animation_nb767"]

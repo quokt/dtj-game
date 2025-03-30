@@ -1,9 +1,10 @@
-[gd_scene load_steps=35 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=37 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
 [ext_resource type="Script" path="res://Scripts/waves.gd" id="2_2pvco"]
 [ext_resource type="Script" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
+[ext_resource type="Shader" path="res://Scenes/titlescreen.gdshader" id="4_cpa0t"]
 [ext_resource type="AudioStream" uid="uid://cj5voopdx8kqm" path="res://Audio/loops block/block full/loop 1.wav" id="4_uy6yx"]
 [ext_resource type="AudioStream" uid="uid://dqftec3fkm1um" path="res://Audio/loops block/block full/loop 2.wav" id="5_3goxj"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
@@ -109,6 +110,12 @@ enemy_amount = 1
 cooldown_time = 0.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_30fnu"]
+shader = ExtResource("4_cpa0t")
+shader_parameter/radius = 0.7
+shader_parameter/speed = 1.0
+shader_parameter/effect_color = Color(0.827451, 0, 1, 0)
+
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_fdnlq"]
 clip_count = 9
 clip_0/name = &"Loop 1"
@@ -176,6 +183,12 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Camera/TitleScreen"]
+material = SubResource("ShaderMaterial_30fnu")
+offset_right = 640.0
+offset_bottom = 361.0
+mouse_filter = 2
 
 [node name="GameTime" type="Node" parent="." groups=["gametime"]]
 unique_name_in_owner = true

@@ -8,7 +8,7 @@ var mouse_inside : bool = false
 var elapsed : float = 0.0
 func _process(delta: float) -> void:
 	elapsed += delta
-	$Sprite2D/ColorRect.material.set_shader_parameter("chaos", elapsed)
+	$AnimatedSprite2D/ColorRect.material.set_shader_parameter("chaos", elapsed)
 
 
 func _input(event: InputEvent) -> void:

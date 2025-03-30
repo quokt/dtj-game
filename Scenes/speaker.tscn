@@ -1,8 +1,36 @@
-[gd_scene load_steps=7 format=3 uid="uid://cl36ulcq58gn2"]
+[gd_scene load_steps=10 format=3 uid="uid://cl36ulcq58gn2"]
 
 [ext_resource type="Script" path="res://Scripts/speaker.gd" id="1_rg5dd"]
-[ext_resource type="Texture2D" uid="uid://c8w7or8ra7kkj" path="res://Assets/Speaker2.2.png" id="2_4bkbu"]
+[ext_resource type="Texture2D" uid="uid://bxqfdg77uf8hk" path="res://Assets/Speaker2.2-anim.png" id="2_ny6sn"]
 [ext_resource type="Shader" path="res://Shaders/soundwaves.gdshader" id="3_u5co3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_marxr"]
+atlas = ExtResource("2_ny6sn")
+region = Rect2(0, 0, 64, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrusm"]
+atlas = ExtResource("2_ny6sn")
+region = Rect2(64, 0, 64, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6y0k7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_marxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrusm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_marxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_marxr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iwwde"]
 shader = ExtResource("3_u5co3")
@@ -20,12 +48,13 @@ size = Vector2(108, 142)
 [node name="Speaker" type="Node2D"]
 script = ExtResource("1_rg5dd")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.8, 1.8)
-texture = ExtResource("2_4bkbu")
+sprite_frames = SubResource("SpriteFrames_6y0k7")
+autoplay = "default"
 
-[node name="ColorRect" type="ColorRect" parent="Sprite2D"]
+[node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
 z_index = 1
 material = SubResource("ShaderMaterial_iwwde")
 offset_left = -43.0

@@ -20,6 +20,7 @@ func reset() -> void:
 	for enemy in %Enemies.get_children():
 		enemy.queue_free()
 	_enemy_waves = enemy_waves.duplicate(true)
+	%ScoreLabel.get_parent().visible = true
 	
 	
 

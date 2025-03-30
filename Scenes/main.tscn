@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=40 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bo5lpml26n7yf" path="res://Scenes/mouse.tscn" id="12_4ay51"]
 [ext_resource type="PackedScene" uid="uid://ptixcxeaekgw" path="res://Scenes/player.tscn" id="12_wc03o"]
 [ext_resource type="PackedScene" uid="uid://cgpqgrajqlso2" path="res://Scenes/title_screen.tscn" id="14_xdbjb"]
+[ext_resource type="Texture2D" uid="uid://dgtoao7p2n51c" path="res://Assets/ScoreBar.png" id="18_aoxg5"]
 [ext_resource type="FontFile" uid="uid://bnlakaxtphcxj" path="res://Assets/PoliceRuleScreen/upheavtt.ttf" id="18_m0bx7"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
@@ -300,18 +301,34 @@ position = Vector2(4.76837e-07, -208)
 scale = Vector2(10.7875, -8.31789)
 shape = SubResource("RectangleShape2D_afrch")
 
-[node name="ScoreLabel" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -388.0
+offset_top = -821.0
+offset_right = -324.0
+offset_bottom = -781.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("18_aoxg5")
+
+[node name="ScoreLabel" type="Label" parent="TextureRect"]
 unique_name_in_owner = true
 z_index = 8
-offset_left = -354.0
-offset_top = -753.0
-offset_right = -115.0
-offset_bottom = -646.0
-scale = Vector2(3, 3)
+layout_mode = 0
+offset_left = -11.5
+offset_top = 7.0
+offset_right = 76.5
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("18_m0bx7")
-text = "34"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]

@@ -6,6 +6,8 @@ func _ready() -> void:
 	
 	
 func on_gameover() -> void:
+	%ScoreLabel.get_parent().visible = false
+	$TextureRect/ScoreLabel.text = str(int(get_tree().get_first_node_in_group("main").score))
 	get_tree().paused = true
 	$AudioStreamPlayer.volume_db = 0
 	%MainAudioStreamPlayer.volume_db = -80.0

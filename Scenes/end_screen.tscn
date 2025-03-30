@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt68whx8ahlqj"]
+[gd_scene load_steps=14 format=3 uid="uid://dt68whx8ahlqj"]
 
 [ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_vxgnq"]
 [ext_resource type="Texture2D" uid="uid://bnr611wb130u6" path="res://Assets/Frame1GameOverScreen.png" id="4_svi1t"]
 [ext_resource type="Texture2D" uid="uid://bcdvuqlqdcye2" path="res://Assets/exit_button.tres" id="5_qu28c"]
 [ext_resource type="Texture2D" uid="uid://jcsxlcq1s12w" path="res://Assets/Frame2GameOverScreen.png" id="5_vggsb"]
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="6_e0yb1"]
+[ext_resource type="Texture2D" uid="uid://dgtoao7p2n51c" path="res://Assets/ScoreBar.png" id="7_jnxup"]
 [ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_2pjye"]
+[ext_resource type="FontFile" uid="uid://bnlakaxtphcxj" path="res://Assets/PoliceRuleScreen/upheavtt.ttf" id="8_o1q4i"]
 
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
@@ -97,19 +99,40 @@ stream = ExtResource("8_2pjye")
 
 [node name="TotalChaos" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 179.0
-offset_top = 18.0
-offset_right = 478.0
-offset_bottom = 287.0
+offset_left = 203.0
+offset_top = 35.0
+offset_right = 452.0
+offset_bottom = 264.0
 texture = SubResource("AnimatedTexture_2c4vx")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 267.0
-offset_right = 288.0
-offset_bottom = 307.0
+offset_left = 323.0
+offset_top = 263.0
+offset_right = 387.0
+offset_bottom = 303.0
 scale = Vector2(3, 3)
 texture_normal = ExtResource("5_qu28c")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 265.0
+offset_right = 227.0
+offset_bottom = 305.0
+scale = Vector2(2.6, 2.6)
+texture = ExtResource("7_jnxup")
+
+[node name="ScoreLabel" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = 3.84615
+offset_top = 6.53846
+offset_right = 59.8462
+offset_bottom = 29.5385
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("8_o1q4i")
+text = "34"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

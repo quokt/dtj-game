@@ -31,4 +31,7 @@ func _on_exit_button_pressed() -> void:
 
 
 func _on_texture_button_pressed() -> void:
+	$AnimationPlayer.play("vanish")
 	%TitleScreen.on_pause()
+	await(get_tree().create_timer(1.0).timeout)
+	get_tree().get_first_node_in_group("main").reset()

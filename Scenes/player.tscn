@@ -63,8 +63,6 @@ radius = 13.0384
 collision_layer = 17
 collision_mask = 17
 script = ExtResource("1_kol6t")
-walk_speed = 130.0
-run_speed = 100.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

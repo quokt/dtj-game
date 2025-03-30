@@ -33,4 +33,4 @@ func take_damage(amount : float) -> void:
 		
 func die() -> void:
 	died.emit()
-	queue_free()
+	#queue_free()

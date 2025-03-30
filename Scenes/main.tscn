@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://uklm5ku67n8e"]
+[gd_scene load_steps=39 format=3 uid="uid://uklm5ku67n8e"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -17,38 +17,39 @@
 [ext_resource type="PackedScene" uid="uid://bo5lpml26n7yf" path="res://Scenes/mouse.tscn" id="12_4ay51"]
 [ext_resource type="PackedScene" uid="uid://ptixcxeaekgw" path="res://Scenes/player.tscn" id="12_wc03o"]
 [ext_resource type="PackedScene" uid="uid://cgpqgrajqlso2" path="res://Scenes/title_screen.tscn" id="14_xdbjb"]
+[ext_resource type="FontFile" uid="uid://bnlakaxtphcxj" path="res://Assets/PoliceRuleScreen/upheavtt.ttf" id="18_m0bx7"]
 
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 0.0
+enemy_amount = 3
+cooldown_time = 5.0
 
 [sub_resource type="Resource" id="Resource_o1kou"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 6
+cooldown_time = 13.0
 
 [sub_resource type="Resource" id="Resource_sr6kx"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 9
+cooldown_time = 21.0
 
 [sub_resource type="Resource" id="Resource_jkdf5"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 15
+cooldown_time = 31.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_wsu2k"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 20
+cooldown_time = 30.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_k12tt"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 0
-cooldown_time = 0.0
+enemy_amount = 20
+cooldown_time = 30.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_h1bgf"]
@@ -176,7 +177,6 @@ limit_right = 320
 
 [node name="EndScreen" parent="Camera" instance=ExtResource("3_xekq0")]
 unique_name_in_owner = true
-visible = false
 z_index = 2
 
 [node name="ColorRect" type="ColorRect" parent="Camera/EndScreen"]
@@ -264,7 +264,6 @@ position = Vector2(227, -532)
 [node name="Player" parent="Visible" instance=ExtResource("12_wc03o")]
 unique_name_in_owner = true
 position = Vector2(-14, -481)
-walk_speed = 50.0
 
 [node name="Label" type="Label" parent="Visible/Player"]
 unique_name_in_owner = true
@@ -300,6 +299,19 @@ shape = SubResource("RectangleShape2D_afrch")
 position = Vector2(4.76837e-07, -208)
 scale = Vector2(10.7875, -8.31789)
 shape = SubResource("RectangleShape2D_afrch")
+
+[node name="ScoreLabel" type="Label" parent="."]
+unique_name_in_owner = true
+z_index = 8
+offset_left = -354.0
+offset_top = -753.0
+offset_right = -115.0
+offset_bottom = -646.0
+scale = Vector2(3, 3)
+theme_override_fonts/font = ExtResource("18_m0bx7")
+text = "34"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]

@@ -152,6 +152,27 @@ clip_8/next_clip = 8
 script = ExtResource("1_itoj1")
 enemy_waves = Array[ExtResource("2_yl0mw")]([SubResource("Resource_sfi7m"), SubResource("Resource_o1kou"), SubResource("Resource_sr6kx"), SubResource("Resource_jkdf5"), SubResource("Resource_wsu2k"), SubResource("Resource_k12tt"), SubResource("Resource_h1bgf"), SubResource("Resource_b3802"), SubResource("Resource_fevyy"), SubResource("Resource_hibaj"), SubResource("Resource_pdsj5"), SubResource("Resource_ee4r6"), SubResource("Resource_gt3je"), SubResource("Resource_3pmx8"), SubResource("Resource_u50mg"), SubResource("Resource_cbgmd")])
 
+[node name="Camera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -451)
+limit_left = -320
+limit_right = 320
+
+[node name="TitleScreen" parent="Camera" instance=ExtResource("14_xdbjb")]
+unique_name_in_owner = true
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 181.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="GameTime" type="Node" parent="."]
 script = ExtResource("1_ow3qn")
 
@@ -209,32 +230,11 @@ position = Vector2(227, -532)
 unique_name_in_owner = true
 position = Vector2(-14, -481)
 
-[node name="Camera" type="Camera2D" parent="Visible/Player"]
-unique_name_in_owner = true
-position = Vector2(14, 30)
-limit_left = -320
-limit_right = 320
-limit_bottom = -200
-
-[node name="TitleScreen" parent="Visible/Player/Camera" instance=ExtResource("14_xdbjb")]
-unique_name_in_owner = true
-z_index = 10
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -320.0
-offset_top = -180.0
-offset_right = 320.0
-offset_bottom = 181.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
 metadata/_edit_lock_ = true
 
 [connection signal="beat" from="GameTime" to="Visible/BeatWaves" method="_on_beat"]
 [connection signal="timeout" from="Visible/BeatWaves/WaveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="clicked" from="Visible/Towers/Table" to="." method="_on_speaker_clicked"]
 [connection signal="clicked" from="Visible/Towers/Speaker" to="." method="_on_speaker_clicked"]
 [connection signal="clicked" from="Visible/Towers/Speaker2" to="." method="_on_speaker_clicked"]

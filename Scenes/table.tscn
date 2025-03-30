@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://i7ttkcmfj2o4"]
+[gd_scene load_steps=4 format=3 uid="uid://i7ttkcmfj2o4"]
 
 [ext_resource type="Script" path="res://Scripts/table.gd" id="1_75djh"]
 [ext_resource type="Texture2D" uid="uid://fb4nmscnwkam" path="res://Assets/Desk.png" id="2_4ppvu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0jla"]
+size = Vector2(58.6594, 20)
 
 [node name="Table" type="Node2D"]
 scale = Vector2(0.2, 0.2)
@@ -14,4 +17,17 @@ texture = ExtResource("2_4ppvu")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+visible = false
 polygon = PackedVector2Array(-25, 5, 25, 5, 30, 15, 30, 0, 25, -10, -20, -10, -28.6632, 6.07935, -28.872, 15.8236, -25.8792, 16.1716)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.17888, 0)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_k0jla")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -25,10 +25,10 @@ texture = ExtResource("2_4bkbu")
 [node name="ColorRect" type="ColorRect" parent="Sprite2D"]
 z_index = 1
 material = SubResource("ShaderMaterial_iwwde")
-offset_left = -27.0
+offset_left = -43.0
 offset_top = -76.0
-offset_right = 28.0
-offset_bottom = 82.0
+offset_right = 45.0
+offset_bottom = 88.0
 
 [node name="Area2D" type="Area2D" parent="."]
 

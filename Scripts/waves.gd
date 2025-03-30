@@ -68,9 +68,9 @@ func _on_beat() -> void:
 		for tower in %Towers.get_children():
 			if tower.active:
 				var new_shockwave = shockwave_scene.instantiate()
-				var shader_position = remap(tower.position.x, -239, 227, 0.1, 0.8 )
+				var shader_position = remap(tower.position.x, -239, 227, 0.15, 0.85 )
 				%ShockWaves.add_child(new_shockwave)
-				new_shockwave.set_shader_position(shader_position, 0.1)
+				new_shockwave.set_shader_position(shader_position, 0.4)
 				print(new_shockwave.position)
 				print(tower.position)
 			

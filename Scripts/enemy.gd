@@ -10,6 +10,8 @@ signal touched_speaker()
 @export var idle_min_displacement : Vector2
 @export var idle_max_displacement : Vector2
 
+var countdown : float = randf_range(8.0, 20.0)
+
 @export var override_target : Node2D = null
 
 enum COLOR_STATE {BLUE, RED}
@@ -31,7 +33,7 @@ var attack_target : Vector2
 func _physics_process(delta: float) -> void:
 	if color_state == COLOR_STATE.BLUE:
 		get_tree().get_first_node_in_group("main").score += score_increment
-	if randi()%10000 == 0:
+	if randi()%500 == 0:
 		set_color_state(COLOR_STATE.RED)
 	elapsed += delta
 	match state:
@@ -41,12 +43,16 @@ func _physics_process(delta: float) -> void:
 				elapsed = 0.0
 				state = STATE.FOLLOW
 		STATE.FOLLOW:
+			countdown -= delta
+			if countdown <= 0.0:
+				queue_free()
 			velocity = (dance_target - position).normalized() * speed * delta
 			if elapsed >= wait_time:
 				dance_target = Vector2(base_target.x + randf_range(10.0,60.0), base_target.y + randf_range(10.0,40.0))
 				elapsed = 0.0
 				wait_time = randf_range(0.5,3.0)
 		STATE.ATTACK:
+			
 			velocity = (attack_target - position).normalized() * attack_speed * delta
 		STATE.STUN:
 			stun_elapsed += delta
@@ -64,6 +70,9 @@ func set_color_state(new_color_state : COLOR_STATE) -> void:
 	match color_state:
 		COLOR_STATE.RED:
 			state = STATE.ATTACK
+			if %Enemies:
+				if randi()%2 and %Enemies.get_child_count() > 0:
+					attack_target = %Enemies.get_children()[randi()%%Enemies.get_child_count()].position
 			$Area2D.set_deferred("monitoring", true)
 			#$Area2D.set_deferred("monitorable", true)
 			$Blue.visible = false
@@ -74,6 +83,14 @@ func set_color_state(new_color_state : COLOR_STATE) -> void:
 			state = STATE.FOLLOW
 			$Red.visible = false
 			$Blue.visible = true
+
+
+func get_random_blue_enemy() -> Node2D:
+	for enemy in %Enemies.get_children():
+		if enemy.state_color != COLOR_STATE.BLUE:
+			continue
+		return enemy
+	return 
 
 
 func _ready() -> void:

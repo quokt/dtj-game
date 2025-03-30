@@ -53,8 +53,8 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmbu5"]
-height = 20.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_q2ieo"]
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_47qeo"]
 radius = 13.0384
@@ -72,7 +72,7 @@ autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 3)
-shape = SubResource("CapsuleShape2D_bmbu5")
+shape = SubResource("CircleShape2D_q2ieo")
 debug_color = Color(0.97114, 0, 0.449982, 0.42)
 
 [node name="Area2D" type="Area2D" parent="."]

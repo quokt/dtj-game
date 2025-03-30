@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://jlfanqkkychd"]
+
+[ext_resource type="Texture2D" uid="uid://mel52lc2dygk" path="res://Assets/mr_caisson.png" id="1_ee7d6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vrwb8"]
+atlas = ExtResource("1_ee7d6")
+region = Rect2(0, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8vvc"]
+atlas = ExtResource("1_ee7d6")
+region = Rect2(96, 0, 96, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4u1q"]
+atlas = ExtResource("1_ee7d6")
+region = Rect2(192, 0, 96, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pgyxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vrwb8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8vvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4u1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="MrCaisson" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pgyxs")

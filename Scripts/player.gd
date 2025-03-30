@@ -4,7 +4,7 @@ signal enemy_touched(enemy)
 
 #@export var walk_speed : float
 #@export var run_speed : float
-var base_speed = 150
+var base_speed = 140.0
 var slow_speed := 60.0
 
 

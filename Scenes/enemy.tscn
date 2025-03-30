@@ -124,7 +124,7 @@ safe_margin = 0.001
 script = ExtResource("1_y4ntl")
 attack_speed = 4000.0
 stun_time = 1.0
-score_increment = 0.006
+score_increment = 0.004
 
 [node name="Blue" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -148,6 +148,7 @@ frame_progress = 0.708644
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_owvqq")
+volume_db = 10.0
 
 [node name="shader" type="ColorRect" parent="."]
 visible = false

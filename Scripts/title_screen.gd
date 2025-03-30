@@ -9,13 +9,14 @@ func _ready() -> void:
 	
 	
 func on_pause() -> void:
-	get_tree().paused = true
+	get_tree().get_first_node_in_group("main").reset()
 	$AudioStreamPlayer.play()
 	$AudioStreamPlayer.volume_db = 0
 	%MainAudioStreamPlayer.volume_db = -80.0
-
 	$AnimationPlayer.play("appear")
 	await($AnimationPlayer.animation_finished)
+	get_tree().paused = true
+
 
 
 func _on_play_button_pressed() -> void:

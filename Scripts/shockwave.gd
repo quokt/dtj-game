@@ -4,7 +4,6 @@ var elapsed : float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$shockwave_collider.shape.radius = 1
 	pass # Replace with function body.
 
 func set_shader_position( pos: Vector2):	
@@ -18,7 +17,10 @@ func _process(delta: float) -> void:
 			position = tower.position
 	elapsed += delta
 	$shockwave_shader.material.set_shader_parameter("radius", elapsed)
-	$shockwave_collider.shape.radius += elapsed*0.5
+<<<<<<< HEAD
+	#$shockwave_collider.shape.radius += elapsed*0.5
+=======
+>>>>>>> 83f6235 (shockwave web, t'es choqué)
 	if elapsed >= 2:
 		queue_free()
 	pass

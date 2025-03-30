@@ -95,7 +95,7 @@ autoplay = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_2pjye")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TotalChaos" type="TextureRect" parent="."]
 layout_mode = 0
 offset_left = 179.0
 offset_top = 18.0

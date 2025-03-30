@@ -43,6 +43,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	%Label.text = str(score, global_chaos)
+	%ScoreLabel.text = str(int(score))
 	if global_chaos >= max_global_chaos:
 		%EndScreen.on_gameover()
 		

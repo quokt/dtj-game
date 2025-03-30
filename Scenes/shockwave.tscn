@@ -1,30 +1,24 @@
-[gd_scene load_steps=5 format=3 uid="uid://cv34b1krsteku"]
+[gd_scene load_steps=4 format=3 uid="uid://cv34b1krsteku"]
 
 [ext_resource type="Script" path="res://Scripts/shockwave.gd" id="1_3jxcd"]
 [ext_resource type="Shader" path="res://Shaders/shockwave.gdshader" id="1_rm0x0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gsqe0"]
 shader = ExtResource("1_rm0x0")
-shader_parameter/strength = 0.083
+shader_parameter/strength = 0.047
 shader_parameter/center = Vector2(0.5, 0.5)
 shader_parameter/radius = 0.16
-shader_parameter/aberration = 0.695
-shader_parameter/width = 0.0427
-shader_parameter/feather = 0.12
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_eml1m"]
-radius = 0.01
+shader_parameter/aberration = 0.942
+shader_parameter/width = 0.0385
+shader_parameter/feather = 0.333
 
 [node name="shockwave" type="Area2D"]
 script = ExtResource("1_3jxcd")
 
 [node name="shockwave_shader" type="ColorRect" parent="."]
-z_index = 2
+z_index = 4
 material = SubResource("ShaderMaterial_gsqe0")
 offset_left = -640.0
 offset_top = -640.0
 offset_right = 640.0
 offset_bottom = 640.0
-
-[node name="shockwave_collider" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_eml1m")

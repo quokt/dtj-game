@@ -87,7 +87,7 @@ void fragment() {
 resource_local_to_scene = true
 shader = SubResource("Shader_whgfh")
 shader_parameter/chaos = 7.773
-shader_parameter/radius = 0.826
+shader_parameter/radius = 0.877
 shader_parameter/attenuation = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x2da6"]
@@ -129,10 +129,10 @@ autoplay = "default"
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
 z_index = 5
 material = SubResource("ShaderMaterial_pg2ai")
-offset_left = -43.0
-offset_top = -76.0
-offset_right = 45.0
-offset_bottom = 88.0
+offset_left = -33.0
+offset_top = -46.0
+offset_right = 34.0
+offset_bottom = 51.0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4

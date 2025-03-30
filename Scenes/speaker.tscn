@@ -88,7 +88,7 @@ resource_local_to_scene = true
 shader = SubResource("Shader_whgfh")
 shader_parameter/chaos = 7.773
 shader_parameter/radius = 0.826
-shader_parameter/attenuation = 2.0
+shader_parameter/attenuation = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x2da6"]
 radius = 36.0

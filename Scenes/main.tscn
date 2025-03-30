@@ -1,9 +1,9 @@
 [gd_scene load_steps=32 format=3 uid="uid://uklm5ku67n8e"]
 
-[ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
-[ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
-[ext_resource type="Script" path="res://Scripts/waves.gd" id="2_2pvco"]
-[ext_resource type="Script" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
+[ext_resource type="Script" uid="uid://c1pxk2q0j5o8t" path="res://Scripts/main.gd" id="1_itoj1"]
+[ext_resource type="Script" uid="uid://ccn6l87y4bp8f" path="res://Scripts/game_time.gd" id="1_ow3qn"]
+[ext_resource type="Script" uid="uid://b28o2n08nhmk2" path="res://Scripts/waves.gd" id="2_2pvco"]
+[ext_resource type="Script" uid="uid://bptn37gb8ldn6" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
 [ext_resource type="AudioStream" uid="uid://cj5voopdx8kqm" path="res://Audio/loops block/block full/loop 1.wav" id="4_uy6yx"]
 [ext_resource type="AudioStream" uid="uid://dqftec3fkm1um" path="res://Audio/loops block/block full/loop 2.wav" id="5_3goxj"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
@@ -208,9 +208,13 @@ position = Vector2(227, -532)
 unique_name_in_owner = true
 position = Vector2(-14, -481)
 
-[node name="Camera" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="Visible/Player"]
 unique_name_in_owner = true
-position = Vector2(0, -451)
+position = Vector2(14, 30)
+limit_left = -320
+limit_top = -620
+limit_right = 320
+limit_bottom = -150
 
 [node name="Mouse" parent="." instance=ExtResource("12_4ay51")]
 metadata/_edit_lock_ = true

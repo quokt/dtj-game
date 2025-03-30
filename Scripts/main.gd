@@ -3,7 +3,7 @@ extends Node
 var score : float = 0.0
 var global_chaos : float
 
-var max_global_chaos : float = 100.0
+var max_global_chaos : float = 30.0
 var win_score : float = 100.0
 
 var enemy_scene := preload("res://Scenes/enemy.tscn")
@@ -31,6 +31,10 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	%Label.text = str(score, global_chaos)
+	if global_chaos >= max_global_chaos:
+		%EndScreen.on_gameover()
+		
+		
 
 
 func _on_wave_timer_timeout() -> void:

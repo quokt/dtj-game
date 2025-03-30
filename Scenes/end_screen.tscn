@@ -1,0 +1,127 @@
+[gd_scene load_steps=14 format=3 uid="uid://cnffu1sr3i7x1"]
+
+[ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_p7tt6"]
+[ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="6_e0yb1"]
+[ext_resource type="Texture2D" uid="uid://dy5ktyum65nu7" path="res://Assets/TitleSreen.png" id="7_srkq1"]
+[ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_2pjye"]
+
+[sub_resource type="Animation" id="Animation_1nfgp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-320, -180)]
+}
+
+[sub_resource type="Animation" id="Animation_nb767"]
+resource_name = "appear"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-320, -320), Vector2(-320, -180)]
+}
+
+[sub_resource type="Animation" id="Animation_7fwmy"]
+resource_name = "vanish"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-320, -180), Vector2(-320, -640)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xcpyg"]
+_data = {
+"RESET": SubResource("Animation_1nfgp"),
+"appear": SubResource("Animation_nb767"),
+"vanish": SubResource("Animation_7fwmy")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l81ps"]
+atlas = ExtResource("7_srkq1")
+region = Rect2(0, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_166cj"]
+atlas = ExtResource("7_srkq1")
+region = Rect2(128, 0, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_347wd"]
+atlas = ExtResource("7_srkq1")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vl6j"]
+atlas = ExtResource("7_srkq1")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8ndq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l81ps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_166cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_347wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vl6j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TitleScreen" type="ColorRect"]
+process_mode = 3
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 320.0
+offset_bottom = 181.0
+color = Color(0.223529, 0.00392157, 0.47451, 1)
+script = ExtResource("1_p7tt6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-1, 4)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-1, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xcpyg")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_e0yb1")
+autoplay = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(322, 88)
+scale = Vector2(2.93164, 2.85156)
+sprite_frames = SubResource("SpriteFrames_t8ndq")
+autoplay = "default"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_2pjye")

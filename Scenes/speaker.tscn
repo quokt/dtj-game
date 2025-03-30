@@ -127,7 +127,7 @@ sprite_frames = SubResource("SpriteFrames_6y0k7")
 autoplay = "default"
 
 [node name="ColorRect" type="ColorRect" parent="AnimatedSprite2D"]
-z_index = 1
+z_index = 5
 material = SubResource("ShaderMaterial_pg2ai")
 offset_left = -43.0
 offset_top = -76.0

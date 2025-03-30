@@ -13,6 +13,9 @@ func on_gameover() -> void:
 	%MainAudioStreamPlayer.volume_db = -80.0
 	$AnimationPlayer.play("appear")
 	await($AnimationPlayer.animation_finished)
+	$AudioStreamPlayer.volume_db = 0
+	%MainAudioStreamPlayer.volume_db = -80.0
+
 
 
 func _on_play_button_pressed() -> void:

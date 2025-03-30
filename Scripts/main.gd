@@ -24,6 +24,7 @@ func reset() -> void:
 	for tower in %Towers.get_children():
 		if tower.has_node("AnimatedSprite2D/ColorRect"):
 			tower.get_node("AnimatedSprite2D/ColorRect").material.set_shader_parameter("chaos", 0.0)
+	%WaveTimer.start(0.0)
 	
 	
 
@@ -56,7 +57,6 @@ func _process(delta: float) -> void:
 
 func _on_wave_timer_timeout() -> void:
 	if _enemy_waves.is_empty():
-		%WaveTimer.stop()
 		return
 	var wave : EnemyWave = _enemy_waves.pop_front()
 	spawn_enemies_from_wave(wave)

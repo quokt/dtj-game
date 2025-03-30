@@ -1,4 +1,8 @@
+
 [gd_scene load_steps=39 format=3 uid="uid://uklm5ku67n8e"]
+
+[gd_scene load_steps=35 format=3 uid="uid://uklm5ku67n8e"]
+
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]
@@ -6,14 +10,10 @@
 [ext_resource type="Script" path="res://Scripts/EnemyWave.gd" id="2_yl0mw"]
 [ext_resource type="PackedScene" uid="uid://dt68whx8ahlqj" path="res://Scenes/end_screen.tscn" id="3_xekq0"]
 [ext_resource type="Shader" path="res://Scenes/titlescreen.gdshader" id="4_cpa0t"]
-[ext_resource type="AudioStream" uid="uid://cj5voopdx8kqm" path="res://Audio/loops block/block full/loop 1.wav" id="4_uy6yx"]
-[ext_resource type="AudioStream" uid="uid://dqftec3fkm1um" path="res://Audio/loops block/block full/loop 2.wav" id="5_3goxj"]
 [ext_resource type="PackedScene" uid="uid://i7ttkcmfj2o4" path="res://Scenes/table.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://cl36ulcq58gn2" path="res://Scenes/speaker.tscn" id="6_21xkr"]
-[ext_resource type="AudioStream" uid="uid://7fb2krrvui8e" path="res://Audio/loops block/boumboum.wav" id="6_jkdf5"]
-[ext_resource type="AudioStream" uid="uid://vpke6tjpxili" path="res://Audio/loops block/block full/loop 3.wav" id="6_mo28i"]
 [ext_resource type="Texture2D" uid="uid://hd2pdgmc2cq0" path="res://Assets/map.png" id="7_6bp64"]
-[ext_resource type="AudioStream" uid="uid://ctc72666gmxj" path="res://Audio/loops block/block full/loop 4.wav" id="7_jmu3w"]
+[ext_resource type="AudioStream" uid="uid://d0venvalpj02b" path="res://Audio/SON.wav" id="7_kgl4p"]
 [ext_resource type="PackedScene" uid="uid://bo5lpml26n7yf" path="res://Scenes/mouse.tscn" id="12_4ay51"]
 [ext_resource type="PackedScene" uid="uid://ptixcxeaekgw" path="res://Scenes/player.tscn" id="12_wc03o"]
 [ext_resource type="PackedScene" uid="uid://cgpqgrajqlso2" path="res://Scenes/title_screen.tscn" id="14_xdbjb"]
@@ -118,45 +118,6 @@ shader_parameter/radius = 0.7
 shader_parameter/speed = 1.0
 shader_parameter/effect_color = Color(0.827451, 0, 1, 0)
 
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_fdnlq"]
-clip_count = 9
-clip_0/name = &"Loop 1"
-clip_0/stream = ExtResource("4_uy6yx")
-clip_0/auto_advance = 1
-clip_0/next_clip = 1
-clip_1/name = &"Loop 1"
-clip_1/stream = ExtResource("4_uy6yx")
-clip_1/auto_advance = 1
-clip_1/next_clip = 2
-clip_2/name = &"Loop 2"
-clip_2/stream = ExtResource("5_3goxj")
-clip_2/auto_advance = 1
-clip_2/next_clip = 3
-clip_3/name = &"Loop 2"
-clip_3/stream = ExtResource("5_3goxj")
-clip_3/auto_advance = 1
-clip_3/next_clip = 4
-clip_4/name = &"Loop 3"
-clip_4/stream = ExtResource("6_mo28i")
-clip_4/auto_advance = 1
-clip_4/next_clip = 5
-clip_5/name = &"Loop 3"
-clip_5/stream = ExtResource("6_mo28i")
-clip_5/auto_advance = 1
-clip_5/next_clip = 6
-clip_6/name = &"Loop 4"
-clip_6/stream = ExtResource("7_jmu3w")
-clip_6/auto_advance = 1
-clip_6/next_clip = 7
-clip_7/name = &"Loop 4"
-clip_7/stream = ExtResource("7_jmu3w")
-clip_7/auto_advance = 1
-clip_7/next_clip = 8
-clip_8/name = &"Boumboum"
-clip_8/stream = ExtResource("6_jkdf5")
-clip_8/auto_advance = 1
-clip_8/next_clip = 0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1vpx"]
 resource_local_to_scene = true
 size = Vector2(4.82039, 153.765)
@@ -211,7 +172,7 @@ script = ExtResource("1_ow3qn")
 [node name="MainAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 process_mode = 3
-stream = SubResource("AudioStreamInteractive_fdnlq")
+stream = ExtResource("7_kgl4p")
 volume_db = -80.0
 autoplay = true
 

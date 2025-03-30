@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cgpqgrajqlso2"]
+[gd_scene load_steps=26 format=3 uid="uid://cgpqgrajqlso2"]
 
 [ext_resource type="Texture2D" uid="uid://bcygwys3hm7ep" path="res://Assets/titlescreenbackground.png" id="1_c7o0y"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_t6guj"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://inj2t2upn5pe" path="res://Assets/AnimationButton3GameRules.png" id="11_a4w4k"]
 [ext_resource type="Texture2D" uid="uid://b287d8vvdohcv" path="res://Assets/BackgroundGameRules.png" id="11_jhu3b"]
 [ext_resource type="Texture2D" uid="uid://dyghd1na74v6v" path="res://Assets/AnimationButton4GameRules.png" id="12_n1vua"]
+[ext_resource type="FontFile" uid="uid://bnlakaxtphcxj" path="res://Assets/PoliceRuleScreen/upheavtt.ttf" id="15_fqeqa"]
 
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
@@ -196,16 +197,29 @@ texture = ExtResource("11_jhu3b")
 
 [node name="ExitButton2" type="TextureButton" parent="ColorRect"]
 layout_mode = 2
-offset_left = 32.0
-offset_top = 212.0
-offset_right = 96.0
-offset_bottom = 244.0
+offset_left = 375.0
+offset_top = 227.0
+offset_right = 439.0
+offset_bottom = 259.0
 scale = Vector2(3, 3)
 focus_mode = 0
 texture_normal = ExtResource("2_tjx30")
 texture_pressed = ExtResource("2_tjx30")
 texture_hover = ExtResource("3_13vrx")
 stretch_mode = 3
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 36.0
+offset_right = 321.0
+offset_bottom = 292.0
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("15_fqeqa")
+text = "Red blobs are trying to propage CHAOS in the rave and destroy the speakers. You have to stop them by converting them to Tekno. Be careful, they are fast and furious..."
+autowrap_mode = 3
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="RulesButton" to="." method="_on_rules_button_pressed"]

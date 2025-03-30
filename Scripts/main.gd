@@ -3,14 +3,26 @@ extends Node
 var score : float = 0.0
 var global_chaos : float
 
-var max_global_chaos : float = 30.0
+var max_global_chaos : float = 20.0
 var win_score : float = 100.0
 
 var enemy_scene := preload("res://Scenes/enemy.tscn")
 
 @export var enemy_waves : Array[EnemyWave]
+@onready var _enemy_waves : Array = enemy_waves.duplicate(true)
 
 signal enemy_wave(enemy_wave : EnemyWave)
+
+
+func reset() -> void:
+	score = 0.0
+	global_chaos = 0.0
+	for enemy in %Enemies.get_children():
+		enemy.queue_free()
+	_enemy_waves = enemy_waves.duplicate(true)
+	
+	
+
 
 var fullscreen_on : bool = false
 func _unhandled_input(event: InputEvent) -> void:
@@ -38,10 +50,10 @@ func _process(delta: float) -> void:
 
 
 func _on_wave_timer_timeout() -> void:
-	if enemy_waves.is_empty():
+	if _enemy_waves.is_empty():
 		%WaveTimer.stop()
 		return
-	var wave : EnemyWave = enemy_waves.pop_front()
+	var wave : EnemyWave = _enemy_waves.pop_front()
 	spawn_enemies_from_wave(wave)
 	enemy_wave.emit(wave)
 	%WaveTimer.start(wave.cooldown_time)

@@ -146,7 +146,7 @@ mouse_filter = 2
 
 [node name="TitleScreen" parent="Camera" instance=ExtResource("14_xdbjb")]
 unique_name_in_owner = true
-z_index = 10
+z_index = 14
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -260,6 +260,7 @@ scale = Vector2(10.7875, -8.31789)
 shape = SubResource("RectangleShape2D_afrch")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+z_index = 5
 offset_left = -68.0
 offset_top = -639.0
 offset_right = -4.0
@@ -278,6 +279,7 @@ offset_right = 48.0
 offset_bottom = 26.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("18_m0bx7")
+text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
 

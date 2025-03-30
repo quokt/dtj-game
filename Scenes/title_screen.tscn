@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cgpqgrajqlso2"]
+[gd_scene load_steps=29 format=3 uid="uid://cgpqgrajqlso2"]
 
 [ext_resource type="Texture2D" uid="uid://bcygwys3hm7ep" path="res://Assets/titlescreenbackground.png" id="1_c7o0y"]
 [ext_resource type="Script" path="res://Scripts/title_screen.gd" id="1_t6guj"]
@@ -9,7 +9,9 @@
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="4_fisst"]
 [ext_resource type="Texture2D" uid="uid://dy5ktyum65nu7" path="res://Assets/TitleSreen.png" id="7_2bvlb"]
 [ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_1vjgs"]
+[ext_resource type="Texture2D" uid="uid://dla17pgv3sbs3" path="res://Assets/CreditButton2.png" id="9_dit87"]
 [ext_resource type="Texture2D" uid="uid://cbeja4gla22fm" path="res://Assets/AnimationButton1GameRules.png" id="9_yn12h"]
+[ext_resource type="Texture2D" uid="uid://73tb7pmlsei5" path="res://Assets/CreditButton.png" id="10_b07s6"]
 [ext_resource type="Texture2D" uid="uid://dw655xld4y73c" path="res://Assets/AnimationButton2GameRules.png" id="10_sx1vw"]
 [ext_resource type="Texture2D" uid="uid://inj2t2upn5pe" path="res://Assets/AnimationButton3GameRules.png" id="11_a4w4k"]
 [ext_resource type="Texture2D" uid="uid://b287d8vvdohcv" path="res://Assets/BackgroundGameRules.png" id="11_jhu3b"]
@@ -26,6 +28,13 @@ frame_2/texture = ExtResource("11_a4w4k")
 frame_2/duration = 0.25
 frame_3/texture = ExtResource("12_n1vua")
 frame_3/duration = 0.25
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_poyie"]
+frames = 2
+frame_0/texture = ExtResource("9_dit87")
+frame_0/duration = 0.25
+frame_1/texture = ExtResource("10_b07s6")
+frame_1/duration = 0.25
 
 [sub_resource type="Animation" id="Animation_1nfgp"]
 length = 0.001
@@ -137,6 +146,20 @@ action_mode = 0
 texture_normal = ExtResource("12_n1vua")
 texture_pressed = ExtResource("12_n1vua")
 texture_hover = SubResource("AnimatedTexture_g47dc")
+
+[node name="CreditsButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 528.0
+offset_top = 162.0
+offset_right = 560.0
+offset_bottom = 194.0
+scale = Vector2(3, 3)
+focus_mode = 0
+action_mode = 0
+texture_normal = ExtResource("9_dit87")
+texture_pressed = ExtResource("9_dit87")
+texture_hover = SubResource("AnimatedTexture_poyie")
 
 [node name="ExitButton" type="TextureButton" parent="."]
 layout_mode = 2

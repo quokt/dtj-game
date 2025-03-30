@@ -33,7 +33,7 @@ var attack_target : Vector2
 func _physics_process(delta: float) -> void:
 	if color_state == COLOR_STATE.BLUE:
 		get_tree().get_first_node_in_group("main").score += score_increment
-	if randi()%3000 == 0:
+	if randi()%2500 == 0:
 		set_color_state(COLOR_STATE.RED)
 	elapsed += delta
 	match state:

@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 			velocity = (attack_target - position).normalized() * attack_speed * delta
 		STATE.STUN:
 			stun_elapsed += delta
-			velocity = Vector2(0, 0)
+			velocity = (attack_target - position).normalized() * -attack_speed * delta
 			if stun_elapsed >= stun_time:
 				state = before_stun_state
 

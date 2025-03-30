@@ -125,6 +125,7 @@ shader_parameter/attenuation = 5.0
 collision_layer = 11
 script = ExtResource("1_y4ntl")
 attack_speed = 4000.0
+stun_time = 1.0
 score_increment = 0.003
 
 [node name="Blue" type="AnimatedSprite2D" parent="."]

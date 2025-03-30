@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://i7ttkcmfj2o4"]
+[gd_scene load_steps=7 format=3 uid="uid://i7ttkcmfj2o4"]
 
 [ext_resource type="Script" path="res://Scripts/table.gd" id="1_75djh"]
 [ext_resource type="Texture2D" uid="uid://fb4nmscnwkam" path="res://Assets/Desk.png" id="2_4ppvu"]
-[ext_resource type="Texture2D" uid="uid://c1ifwvwo3iyl8" path="res://Assets/cans.png" id="3_dpxsl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qiljo"]
 atlas = ExtResource("2_4ppvu")
@@ -66,7 +65,6 @@ scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_k0jla")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-texture = ExtResource("3_dpxsl")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

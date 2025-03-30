@@ -60,9 +60,8 @@ func _process(delta: float) -> void:
 func _on_wave_timer_timeout() -> void:
 	var wave : EnemyWave
 	if _enemy_waves.is_empty():
-		wave = EnemyWave.new()
-		wave.cooldown_time = 1.0
-		wave.enemy_amount=1
+		_enemy_waves = enemy_waves.duplicate(true)
+		wave = _enemy_waves.pop_front()
 	else:
 		wave = _enemy_waves.pop_front()
 	spawn_enemies_from_wave(wave)

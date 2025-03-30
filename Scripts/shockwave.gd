@@ -17,10 +17,6 @@ func _process(delta: float) -> void:
 			position = tower.position
 	elapsed += delta
 	$shockwave_shader.material.set_shader_parameter("radius", elapsed)
-<<<<<<< HEAD
-	#$shockwave_collider.shape.radius += elapsed*0.5
-=======
->>>>>>> 83f6235 (shockwave web, t'es choqué)
 	if elapsed >= 2:
 		queue_free()
 	pass

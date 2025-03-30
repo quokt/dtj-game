@@ -19,94 +19,94 @@
 [sub_resource type="Resource" id="Resource_sfi7m"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 3
-cooldown_time = 10.0
+cooldown_time = 5.0
 
 [sub_resource type="Resource" id="Resource_o1kou"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 4
-cooldown_time = 20.0
+cooldown_time = 10.0
 
 [sub_resource type="Resource" id="Resource_sr6kx"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 6
-cooldown_time = 30.0
+cooldown_time = 10.0
 
 [sub_resource type="Resource" id="Resource_jkdf5"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 9
-cooldown_time = 40.0
+cooldown_time = 12.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_wsu2k"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 12
-cooldown_time = 60.0
+cooldown_time = 16.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_k12tt"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 15
-cooldown_time = 30.0
+cooldown_time = 10.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_h1bgf"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 1
-cooldown_time = 4.0
+cooldown_time = 3.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_b3802"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 1
-cooldown_time = 4.0
+cooldown_time = 3.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_fevyy"]
 script = ExtResource("2_yl0mw")
 enemy_amount = 1
-cooldown_time = 4.0
+cooldown_time = 5.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_hibaj"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 2
+cooldown_time = 3.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_pdsj5"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 2
+cooldown_time = 2.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_ee4r6"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 3
+cooldown_time = 2.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_gt3je"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 4
+cooldown_time = 1.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_3pmx8"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 4.0
+enemy_amount = 2
+cooldown_time = 1.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_u50mg"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
+enemy_amount = 10
 cooldown_time = 4.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="Resource" id="Resource_cbgmd"]
 script = ExtResource("2_yl0mw")
-enemy_amount = 1
-cooldown_time = 0.0
+enemy_amount = 12
+cooldown_time = 1.0
 metadata/_custom_type_script = "uid://bptn37gb8ldn6"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_30fnu"]
@@ -279,7 +279,6 @@ offset_right = 48.0
 offset_bottom = 26.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("18_m0bx7")
-text = "999"
 horizontal_alignment = 1
 vertical_alignment = 1
 

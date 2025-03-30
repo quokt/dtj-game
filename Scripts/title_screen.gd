@@ -5,6 +5,7 @@ extends TextureRect
 
 
 func _ready() -> void:
+	$AudioStreamPlayer.play()
 	get_tree().paused = true
 	
 	

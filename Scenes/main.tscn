@@ -1,8 +1,4 @@
-
-[gd_scene load_steps=39 format=3 uid="uid://uklm5ku67n8e"]
-
 [gd_scene load_steps=35 format=3 uid="uid://uklm5ku67n8e"]
-
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_itoj1"]
 [ext_resource type="Script" path="res://Scripts/game_time.gd" id="1_ow3qn"]

@@ -177,8 +177,6 @@ limit_right = 320
 [node name="EndScreen" parent="Camera" instance=ExtResource("3_xekq0")]
 unique_name_in_owner = true
 z_index = 2
-offset_top = 180.0
-offset_bottom = 541.0
 
 [node name="ColorRect" type="ColorRect" parent="Camera/EndScreen"]
 material = SubResource("ShaderMaterial_30fnu")

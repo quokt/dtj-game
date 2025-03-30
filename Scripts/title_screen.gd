@@ -32,3 +32,11 @@ func _on_play_button_pressed() -> void:
 
 func _on_exit_button_pressed() -> void:
 	get_tree().quit(0)
+
+
+func _on_rules_button_pressed() -> void:
+	$ColorRect.visible = true
+
+
+func _on_exit_button_2_pressed() -> void:
+	$ColorRect.visible = false

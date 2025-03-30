@@ -176,7 +176,6 @@ limit_right = 320
 
 [node name="EndScreen" parent="Camera" instance=ExtResource("3_xekq0")]
 unique_name_in_owner = true
-visible = false
 z_index = 2
 
 [node name="ColorRect" type="ColorRect" parent="Camera/EndScreen"]

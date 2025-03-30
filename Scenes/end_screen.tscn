@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt68whx8ahlqj"]
+[gd_scene load_steps=12 format=3 uid="uid://dt68whx8ahlqj"]
 
 [ext_resource type="Script" path="res://Scripts/end_screen.gd" id="1_vxgnq"]
-[ext_resource type="Texture2D" uid="uid://dliqedpvolhgp" path="res://Assets/totalchaos.png" id="4_l4aqn"]
+[ext_resource type="Texture2D" uid="uid://bnr611wb130u6" path="res://Assets/Frame1GameOverScreen.png" id="4_svi1t"]
 [ext_resource type="Texture2D" uid="uid://bcdvuqlqdcye2" path="res://Assets/exit_button.tres" id="5_qu28c"]
+[ext_resource type="Texture2D" uid="uid://jcsxlcq1s12w" path="res://Assets/Frame2GameOverScreen.png" id="5_vggsb"]
 [ext_resource type="AudioStream" uid="uid://b0g3a6110dvb" path="res://Audio/blob sounds/musique menu/menu theme.wav" id="6_e0yb1"]
 [ext_resource type="AudioStream" uid="uid://c01805hg7yuxn" path="res://Audio/blob sounds/fx/play bouton.wav" id="8_2pjye"]
 
@@ -58,6 +59,13 @@ _data = {
 "vanish": SubResource("Animation_7fwmy")
 }
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2c4vx"]
+frames = 2
+frame_0/texture = ExtResource("4_svi1t")
+frame_0/duration = 0.25
+frame_1/texture = ExtResource("5_vggsb")
+frame_1/duration = 0.25
+
 [node name="TitleScreen2" type="TextureRect"]
 process_mode = 3
 visible = false
@@ -93,7 +101,7 @@ offset_left = 179.0
 offset_top = 18.0
 offset_right = 478.0
 offset_bottom = 287.0
-texture = ExtResource("4_l4aqn")
+texture = SubResource("AnimatedTexture_2c4vx")
 
 [node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0

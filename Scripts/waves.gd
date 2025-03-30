@@ -28,7 +28,7 @@ func _draw() -> void:
 			#tower.alpha = min(1.0, tower.alpha + get_physics_process_ddzelta_time())
 		#else:
 			#tower.alpha = max(0.0, tower.alpha - get_physics_process_delta_time())
-		tower.alpha = remap(main.score,0.0,main.win_score,0.0,1.0)
+		tower.alpha = remap(main.global_chaos,0.0,main.max_global_chaos,0.0,1.0)
 		var color : Color = color_speaker
 		if tower == %Table : color = color_table
 		for wave in waves_array:

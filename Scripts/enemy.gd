@@ -69,7 +69,7 @@ func set_color_state(new_color_state : COLOR_STATE) -> void:
 	match color_state:
 		COLOR_STATE.RED:
 			state = STATE.ATTACK
-			if %Enemies:
+			if get_node_or_null("%Enemies"):
 				if randi()%2 and %Enemies.get_child_count() > 0:
 					attack_target = %Enemies.get_children()[randi()%%Enemies.get_child_count()].position
 			$Area2D.set_deferred("monitoring", true)

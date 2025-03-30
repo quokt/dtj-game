@@ -10,6 +10,7 @@ func _ready() -> void:
 	
 func on_pause() -> void:
 	get_tree().paused = true
+	$AudioStreamPlayer.play()
 	$AudioStreamPlayer.volume_db = 0
 	%MainAudioStreamPlayer.volume_db = -80.0
 

@@ -21,6 +21,9 @@ func reset() -> void:
 		enemy.queue_free()
 	_enemy_waves = enemy_waves.duplicate(true)
 	%ScoreLabel.get_parent().visible = true
+	for tower in %Towers.get_children():
+		if tower.has_node("AnimatedSprite2D/ColorRect"):
+			tower.get_node("AnimatedSprite2D/ColorRect").material.set_shader_parameter("chaos", 0.0)
 	
 	
 

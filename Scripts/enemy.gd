@@ -10,7 +10,7 @@ signal touched_speaker()
 @export var idle_min_displacement : Vector2
 @export var idle_max_displacement : Vector2
 
-var countdown : float = randf_range(8.0, 20.0)
+var countdown : float = randf_range(16.0, 36.0)
 
 @export var override_target : Node2D = null
 
@@ -33,7 +33,7 @@ var attack_target : Vector2
 func _physics_process(delta: float) -> void:
 	if color_state == COLOR_STATE.BLUE:
 		get_tree().get_first_node_in_group("main").score += score_increment
-	if randi()%500 == 0:
+	if randi()%4000 == 0:
 		set_color_state(COLOR_STATE.RED)
 	elapsed += delta
 	match state:
